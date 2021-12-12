@@ -3,10 +3,11 @@
 /*VARIABLES*/
 /*NORMALIZACION*/
 
+
+
 /*HEADER*/
 /*MAIN*/
 /*FOOTER*/
-
 
 /*PERSONALIZACION INDEX.HTML*/
 /*PERSONALIZACION SIGNIN.HTML*/
@@ -20,6 +21,11 @@
 /*TABLETS*/
 @media screen and (min-width: 361px) {
 
+
+    /*HEADER*/
+    /*MAIN*/
+    /*FOOTER*/
+
     /*PERSONALIZACION INDEX.HTML*/
     /*PERSONALIZACION SIGNIN.HTML*/
     /*PERSONALIZACION LOGIN.HTML*/
@@ -29,6 +35,12 @@
 
 /*DESKTOP*/
 @media screen and (min-width: 769px) {
+
+
+    /*HEADER*/
+    /*MAIN*/
+    /*FOOTER*/
+
     /*PERSONALIZACION INDEX.HTML*/
     /*PERSONALIZACION SIGNIN.HTML*/
     /*PERSONALIZACION LOGIN.HTML*/
