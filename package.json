@@ -1,0 +1,25 @@
+{
+  "name": "tumueble",
+  "version": "0.0.1",
+  "description": "Proyecto integrador colaborativo en digital house",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DiegoArchila/grupo_3_tuMueble.git"
+  },
+  "author": "Stiven  Peña, Juan Felipe Jaramillo, Ricardo Andres Mantilla Sanchez, Diego Archila.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoArchila/grupo_3_tuMueble/issues"
+  },
+  "homepage": "https://github.com/DiegoArchila/grupo_3_tuMueble#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

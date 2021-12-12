@@ -1,0 +1,34 @@
+/*---------------------------------------------------------------MOBILE FIRST*/
+/*IMPORTS*/
+/*VARIABLES*/
+/*NORMALIZACION*/
+
+/*HEADER*/
+/*MAIN*/
+/*FOOTER*/
+
+
+/*PERSONALIZACION INDEX.HTML*/
+/*PERSONALIZACION SIGNIN.HTML*/
+/*PERSONALIZACION LOGIN.HTML*/
+/*PERSONALIZACION PRODUCTS.HTML*/
+
+/*---------------------------------------------------------------MEDIA QUERYS*/
+
+
+/*TABLETS*/
+@media screen and (min-width: 361px) {
+
+    /*PERSONALIZACION INDEX.HTML*/
+    /*PERSONALIZACION SIGNIN.HTML*/
+    /*PERSONALIZACION LOGIN.HTML*/
+    /*PERSONALIZACION PRODUCTS.HTML*/
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 769px) {
+    /*PERSONALIZACION INDEX.HTML*/
+    /*PERSONALIZACION SIGNIN.HTML*/
+    /*PERSONALIZACION LOGIN.HTML*/
+    /*PERSONALIZACION PRODUCTS.HTML*/
+}
