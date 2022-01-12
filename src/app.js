@@ -16,6 +16,6 @@ app.use(indexRouter);
 
 
 /* Start Server */
-app.listen(port, () => { 
+app.listen(PORT, () => { 
     console.log("Server running in port ",PORT);
 });
