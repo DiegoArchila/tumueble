@@ -11,11 +11,12 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views/");
 
+/* Setting JSON */
 app.use(express.urlencoded({ extended:false }));
+app.use(express.json);
 
 /* Routes Asignations */
 app.use(indexRouter);
-
 
 /* Start Server */
 app.listen(PORT, () => { 
