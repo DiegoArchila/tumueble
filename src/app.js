@@ -16,10 +16,7 @@ app.use(express.urlencoded({ extended:false }));
 
 /* Routes Asignations */
 app.use(indexRouter);
-<<<<<<< HEAD
-=======
 app.use(cartRouter)
->>>>>>> 1b7e429948d51f622b6b58a81962ebf4695bcedf
 
 
 /* Start Server */
