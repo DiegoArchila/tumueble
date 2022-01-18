@@ -7,9 +7,6 @@ module.exports= {
         res.render("index.ejs", {
             settingGeneral,
             index
-        });
-    },
-    login: (req,res) => {
-        res.render("login.ejs");
+        })
     }
 }

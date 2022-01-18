@@ -12,9 +12,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views/");
 
-/* Setting JSON */
 app.use(express.urlencoded({ extended:false }));
-app.use(express.json);
 
 /* Routes Asignations */
 app.use(indexRouter);
@@ -22,6 +20,7 @@ app.use(indexRouter);
 =======
 app.use(cartRouter)
 >>>>>>> 1b7e429948d51f622b6b58a81962ebf4695bcedf
+
 
 /* Start Server */
 app.listen(PORT, () => { 
