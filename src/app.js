@@ -5,7 +5,7 @@ const indexRouter=require("./routes/mainRouts.js");
 const cartRouter=require('./routes/cartRouts.js');
 
 /* Settings */
-const PORT=process.env.PORT || 3000;
+const PORT=process.env.PORT || 3003;
 app.use(express.static("public"));
 
 /* Template Engine */
