@@ -9,8 +9,18 @@
     <title><%- index.title %> | <%- index.name.toUpperCase() %></title>
 </head>
 <body>
-    <%- include('./partials/header')%>
-   <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
-   <%- include('./partials/footer')%> 
+
+    <header>
+        <%- include('./partials/header')%>
+    </header>
+
+   <main>
+        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
+   </main>
+   
+   <footer>
+        <%- include('./partials/footer')%> 
+   </footer>
+   +
 </body>
 </html>
