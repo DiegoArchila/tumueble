@@ -1,0 +1,29 @@
+/*Header*/
+header {
+  background-color: var(--color-bg-primary);
+}
+
+/* Component: SiteView */
+.header__siteView {
+  height: 44px;
+  background-color: var(--color-bg-primary);
+}
+
+.header__optionSite {
+  width: 50%;
+  height: 1em;
+}
+
+.optionSite__menu{
+  width: 20%;
+}
+
+.optionSite__menuIcon {
+  width: 1em;
+  height: 1em;
+}
+
+.header__optionUser {
+  width: 50%;
+  height: 1em;
+}

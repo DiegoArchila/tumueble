@@ -1,0 +1,11 @@
+/*
+    Flex, Row, justify content and
+    aling content at center. 
+*/
+.flx-rw_jc-ac__ctr{
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
