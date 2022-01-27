@@ -3,27 +3,62 @@ header {
   background-color: var(--color-bg-primary);
 }
 
-/* Component: SiteView */
-.header__siteView {
+/* Component: menuBar */
+.menuBar {
   height: 44px;
-  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: center;
 }
 
-.header__optionSite {
+/* Option of site: name and menu */
+.menuBar__optionSite {
   width: 50%;
-  height: 1em;
 }
 
-.optionSite__menu{
-  width: 20%;
+.menuBar__menu{
+  width: 30%;
+  overflow: hidden;
 }
 
-.optionSite__menuIcon {
-  width: 1em;
-  height: 1em;
+/* .menuBar__menuLink{
+
+} */
+
+.menuBar__menuIcon {
+  width: 36px;
+  height: 32px;
+  text-align: center;
+  justify-content: center;
 }
 
-.header__optionUser {
+.menuBar__nameSite{
+  width: 70%;
+}
+
+.menuBar__nameSiteText{
+  font-size: 1.875rem;
+  text-decoration: overline solid;
+  font-weight: bold;
+  color: var(--color-font-menuBar);
+}
+
+
+/* Option of User: login, cart shop, search */
+.menuBar__optionUser {
   width: 50%;
-  height: 1em;
+  justify-content: flex-end;
+  gap: 18px;
+
 }
+
+.menuBar__optionUserIcon {
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  justify-content: center;
+}
+
+
