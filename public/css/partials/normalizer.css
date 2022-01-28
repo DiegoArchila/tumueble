@@ -11,7 +11,7 @@ html {
 
 .menuBar,
 main,
-.footer__ {
+.footer__container {
   width: 95%;
   margin: 0 auto;
 }
@@ -20,6 +20,7 @@ a {
   text-decoration: none;
   color: var(--color-font-icons);
   display: inline-block;
+  cursor: pointer;
 }
 
 ul {

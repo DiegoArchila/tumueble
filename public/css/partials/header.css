@@ -62,12 +62,9 @@ header {
 /* Component: banner */
 .banner {
   width: 100%;
-  height: 180px;
-  
 }
 
 .banner__image {
-  overflow: auto;
   width: 100%;
   height: auto;
   max-height: 360px;
