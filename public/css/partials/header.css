@@ -18,7 +18,7 @@ header {
   width: 50%;
 }
 
-.menuBar__menu{
+.menuBar__menu {
   width: 30%;
   overflow: hidden;
 }
@@ -34,24 +34,22 @@ header {
   justify-content: center;
 }
 
-.menuBar__nameSite{
+.menuBar__nameSite {
   width: 70%;
 }
 
-.menuBar__nameSiteText{
+.menuBar__nameSiteText {
   font-size: 1.875rem;
   text-decoration: overline solid;
   font-weight: bold;
   color: var(--color-font-menuBar);
 }
 
-
 /* Option of User: login, cart shop, search */
 .menuBar__optionUser {
   width: 50%;
   justify-content: flex-end;
   gap: 18px;
-
 }
 
 .menuBar__optionUserIcon {
@@ -61,4 +59,16 @@ header {
   justify-content: center;
 }
 
+/* Component: banner */
+.banner {
+  width: 100%;
+  height: 180px;
+  
+}
 
+.banner__image {
+  overflow: auto;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+}
