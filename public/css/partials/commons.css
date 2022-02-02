@@ -1,0 +1,10 @@
+/*
+    Flex, Row, justify content and
+    aling content at center. 
+*/
+.flx-ctr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
