@@ -1,9 +1,19 @@
 :root{
 
+    --color-bg-body:#E7E7E7;
+    --color-bg-cards:#FFFFFF;
     --color-bg-primary: #232F3E;
+    --color-bg-miniBanner: #04536C;
+    --color-bg-btnOk:#9DB31A;
+    --color-bg-btnFail:#E74C3C;
+
+    --color-font-btn:#FFFFFF;
     --color-font-icons: #FFFFFF;
+    --color-font-title:#FF5200;
     --color-font-text-footer:#FFFFFF;
     --color-font-menuBar:#FFFFFF;
+    --color-font-priceGross:#8E8E8E;
+    
   
     --text-title-sm:1.2em;
     --text-title-md:1.6em;

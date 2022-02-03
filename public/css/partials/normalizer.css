@@ -9,7 +9,12 @@ html {
   font-family: var(--font-RedHatDispaly);
 }
 
+body{
+  background-color: var(--color-bg-body);
+}
+
 .menuBar,
+.miniBanner,
 main,
 .footer__container {
   width: 95%;
@@ -28,5 +33,9 @@ ul {
 }
 
 li {
-  display: inline;
+  display: inline-block;
+}
+
+button{
+  border-style: none;
 }

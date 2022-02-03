@@ -2,17 +2,19 @@
 <html lang="<%- settingGeneral.languaje.Spanish %>">
     <!--HEAD-->
     <%- include("./partials/head.ejs") %>
-<body>
+    <body>
 
-    <!--HEADER-->
-    <%- include('./partials/header.ejs')%>
+        <!--HEADER-->
+        <%- include('./partials/header.ejs')%>
 
-    <!--MAIN-->
-    <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
-   
-    <!--FOOTER-->
-    <%- include('./partials/footer.ejs') %> 
+        <!-- BANNER -->
+        <%- include('./partials/banner.ejs')%>
+
+        <!--MAIN-->
+        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
     
-
-</body>
+        <!--FOOTER-->
+        <%- include('./partials/footer.ejs') %> 
+        
+    </body>
 </html>

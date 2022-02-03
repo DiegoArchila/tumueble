@@ -13,6 +13,9 @@
 /*HEADER*/
 @import url("./partials/header.css");
 
+/*MINIBANNER*/
+@import url("./partials/miniBanner.css");
+
 /*MAIN*/
 @import url("./partials/main.css");
 

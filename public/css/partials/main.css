@@ -1,0 +1,144 @@
+/*-------------------------------CART*/
+/*Cart Detail Title*/
+.cartDetail__title, .cashRegister__title{
+    margin: 12px 0;
+    color: var(--color-font-title);
+    text-align: center;
+}
+
+.cartDetail__container{
+    height: 364px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+.cartDetail__item, .cashRegister__container{
+    height: 96px;
+    padding: 1% 5%;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+    background-color: var(--color-bg-cards);
+}
+
+/*Buttons*/
+.cartDetail__button{
+    width: 29px;
+    height: 29px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-font-icons);
+    border-radius: 3px;
+    border-style: none;
+    text-align: center;
+}
+
+.cartDetail__buttonUnitsAdd{
+    background-color: var(--color-bg-btnOk);
+}
+
+.cartDetail__buttonUnitsDecrease{
+    background-color: var(--color-bg-btnFail);
+}
+
+/*Input*/
+.cartDetail__itemInput{
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+    border-style: none;
+    text-align: center;
+}
+
+/*Pruduct*/
+.cartDetail__product{
+    overflow-y: auto;
+    align-self: baseline;
+    height: 85px;
+}
+
+.cartDetail__productImg{
+    width: 94px;
+    height: 48px;
+    border-radius: 3px;
+}
+
+.cartDetail__productName{
+    width: 94px;
+    font-weight:bold;
+    text-align: center;
+    font-size: 1.2em;
+    
+}
+
+/*Prices and discounts*/
+.cartDetail__containerPrices{
+    width: 110px;
+    height: 85px;
+    justify-content: space-between;
+}
+
+.cartDetail__containerDiscounts{
+    text-align: center;
+}
+
+.cartDetail__priceGrossText, .cartDetail__DiscountText,
+.cartDetail__totalPriceText, .cartDetail__totalPrice{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.cartDetail__priceGrossText{
+    color: var(--color-font-priceGross);
+    text-decoration: line-through;
+}
+
+.cartDetail__DiscountText{
+    color: var(--color-bg-btnOk);
+}
+
+/*Delete product button*/
+.cartDetail__deleteProduct{
+    justify-content: center;
+}
+
+.cartDetail__deleteProductIcon{
+    background-color: var(--color-bg-btnFail);
+    justify-content: center;
+    font-size: 23px;
+}
+
+/*Cash Register*/
+.cashRegister__container{
+    width: 100%;
+    height: 120px;
+}
+
+.cashRegister__totalText{
+    font-size: 20px;
+}
+
+.cashRegister__totalPrice{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/*Cash Register Buttons*/
+.cashRegister__buttonDeleteOrder, .cashRegister__buttonPayOrder{
+    width: 115px;
+    height: 29px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--color-font-btn);
+    border-radius: 3px;
+    border-style: none;
+    text-align: center;
+}
+
+.cashRegister__buttonDeleteOrder{
+    background-color: var(--color-bg-btnFail)
+}
+
+.cashRegister__buttonPayOrder{
+    background-color: var(--color-bg-btnOk)
+}
