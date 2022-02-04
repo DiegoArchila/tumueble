@@ -127,18 +127,39 @@
 .cashRegister__buttonDeleteOrder, .cashRegister__buttonPayOrder{
     width: 115px;
     height: 29px;
-    font-size: 13px;
     font-weight: bold;
     color: var(--color-font-btn);
     border-radius: 3px;
     border-style: none;
-    text-align: center;
+    position: relative;
 }
 
 .cashRegister__buttonDeleteOrder{
-    background-color: var(--color-bg-btnFail)
+    background-color: var(--color-bg-btnFail);
+    text-align: right;
+    font-size: 10px;
+    padding-right: 10px;
 }
 
 .cashRegister__buttonPayOrder{
-    background-color: var(--color-bg-btnOk)
+    background-color: var(--color-bg-btnOk);
+    text-align: center;
+
+    font-size: 13px;
+}
+
+.cashRegister__iconDeleteOrder, .cashRegister__iconPayOrder{
+    position: absolute;
+    
+}
+
+.cashRegister__iconDeleteOrder{
+    left: 5px;
+    bottom: 3px;
+}
+
+.cashRegister__iconPayOrder{
+    right: 5px;
+    bottom: 4px;
+    font-size: 23px;
 }
