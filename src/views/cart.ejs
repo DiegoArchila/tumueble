@@ -11,7 +11,11 @@ cart {
         index,
         settingGeneral,
         cart,
-        toCOP: formatterToCOP 
+        toCOP: formatterToCOP,
+        minibar={
+            title:"Carrito de compras",
+            icon:"mdi:cash-register" //Iconify icons
+        } 
 -->
 <!DOCTYPE html>
 <html lang="<%- settingGeneral.languaje.Spanish %>">
@@ -87,8 +91,10 @@ cart {
 
                     <!-- Section delete product -->
                     <ul class="cartDetail__deleteProduct flx-clm-ctr">
-                        <li class="cartDetail__deleteProductIcon cartDetail__button  flx-clm-ctr">
-                            <span class="iconify cartDetail__deleteProductIcon" data-icon="ph:trash-simple"></span>
+                        <li class="flx-clm-ctr">
+                            <button class="cartDetail__deleteProductIcon cartDetail__button flx-clm-ctr"">
+                                <i class="iconify" data-icon="ph:trash-simple"></i>
+                            </button>
                         </li>
                     </ul>
                 </article>
@@ -99,9 +105,6 @@ cart {
             <% } %>   
         </section>
 
-            <!-- Muestras de Ejemplos de varios Elementos en el la canastilla -->
-            
-    
         
         <section class="cashRegister">
             <h2 class="cashRegister__title">CAJA REGISTRADORA</h2>

@@ -1,0 +1,55 @@
+<!--
+    Objects needs for works
+
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("../partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('../partials/header.ejs')%>
+
+        <!--MiniBanner-->
+        <!--Config-->
+            <% miniBar = {
+                title:"Productos",
+                icon:"eos-icons:admin-outlined"
+            } %> 
+        <%- include('../partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            
+            <!--ADMINBAR-->
+            <%- include('../components/adminBar.ejs')%>    
+            
+            <section class="alerts">
+                <h1 class="alerts__bar"></h1>
+                
+                <!-- Item, represent a Order of the Orders Pending -->
+                <% if (Object.keys(orders).length!=0) {%>
+                    <% orders.forEach(order => {%>
+                        <article class="flx-ctr alerts__item">
+                            <span class="alerts__itemName"><%= order.date %></span>
+                            <a href="#" class="alerts__itemName">PEDIDO <%= order.id %></a>
+                            <span class="alerts__itemName"><%= toCOP.format(order.totalPriceOrder) %></span>
+                            <button class="alerts__buttonSetup">Preparar
+                                <i class="iconify" data-icon="fa-solid:box-open"></i>
+                            </button>
+                        </article>
+                    <%}) %>
+                            
+                <% } else {%>
+                    <!--Orders is empty->
+                <% } %>        
+            </section>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('../partials/footer.ejs') %> 
+        
+    </body>
+</html>

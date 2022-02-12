@@ -3,75 +3,121 @@
         "id": 1, 
         "name": "Sofá 2P Chester Gris Plata", 
         "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color gris",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
+        "sku":316428532164,
+        "terminated": "tela",
+        "images": [
+            {
+                "id":0,
+                "isPrincipal":1,
+                "path":"",
+                "description":"Descripccion de la imagen"
+            }
+        ],
         "category": "Sofás",
         "buyes": 10, 
         "selled": 4,
         "stock": 6,
-        "iva" : true,
-        "price": 4199990,
-        "discount": 38,
-        "visited": true
+        "taxes": {
+            "iva": 16
+        },
+        "priceGross": 4199990,
+        "priceFinal": 5215000, 
+        "discount": 38
     },
     {
         "id": 2, 
         "name": "Sofá 2P Pascal Azul", 
         "Description": "Sofa de 2 puestos, hecho en Sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 160cm y una profundidad: 85cm, de color azul",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
+        "sku":316428532164,
+        "terminated": "tela",
+        "images": [
+            {
+                "id":0,
+                "isPrincipal":1,
+                "path":"",
+                "description":"Descripccion de la imagen"
+            }
+        ],
         "category": "Sofás",
         "buyes": 6, 
         "selled": 5,
         "stock": 1,
-        "iva" : true,
+        "taxes": {
+            "iva": 16
+        },
         "price": 2599990,
-        "discount": 10,
-        "visited": false
+        "discount": 10
     },
     {
         "id": 3, 
         "name": "Sofá 3P Sorrento Vinotinto", 
         "Description": "Sofa de 3 puestos, hecho en pino y acabo en tela con medidas de alto: 84cm, y  ancho: 200cm y una profundidad: 84cm, de color vinotinto",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
+        "sku":316428532164,
+        "terminated": "tela",
+        "images": [
+            {
+                "id":0,
+                "isPrincipal":1,
+                "path":"",
+                "description":"Descripccion de la imagen"
+            }
+        ],
         "category": "Sofás",
         "buyes": 8, 
         "selled": 5,
         "stock": 3,
-        "iva" : true,
+        "taxes": {
+            "iva": 16
+        },
         "price": 1701993,
-        "discount": 26,
-        "visited": false
+        "discount": 26
     },
     {
         "id": 4, 
         "name": "Sofá 3P Malmo Azul Claro Nogal", 
         "Description": "Sofa de 3 puestos, hecho en sajo y acabo en tela con medidas de alto: 78cm, y  ancho: 190cm y una profundidad: 85cm, de color azul",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
+        "sku":316428532164,
+        "terminated": "tela",
+        "images": [
+            {
+                "id":0,
+                "isPrincipal":1,
+                "path":"",
+                "description":"Descripccion de la imagen"
+            }
+        ],
         "category": "Sofás",
         "buyes": 15, 
         "selled": 5,
         "stock": 10,
-        "iva" : true,
+        "taxes": {
+            "iva": 16
+        },
         "price": 2419990,
-        "discount": 0,
-        "visited": true
+        "discount": 0
     },
     {
         "id": 5, 
         "name": "Sofá Cama Click Clack Sally Gris", 
         "Description": "Sofa de 3 puestos, hecho en eucalipto y acabo en tela con medidas de alto: 80/40 cm, y  ancho: 182/182 cm y una profundidad: 87/104 cm, de color gris",
-        "acabado": "tela",
-        "urlImg": "ruta de imagen, escribela por favor",
+        "sku":316428532164,
+        "terminated": "tela",
+        "images": [
+            {
+                "id":0,
+                "isPrincipal":1,
+                "path":"",
+                "description":"Descripccion de la imagen"
+            }
+        ],
         "category": "Sofá/Cama",
         "buyes": 5, 
         "selled": 2,
         "stock": 3,
-        "iva" : true,
+        "taxes": {
+            "iva": 16
+        },
         "price": 1399990,
-        "discount": 0,
-        "visited": true
+        "discount": 0
     }
 ]

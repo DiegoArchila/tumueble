@@ -25,6 +25,9 @@ a {
   text-decoration: none;
   color: var(--color-font-icons);
   display: inline-block;
+}
+
+a, button {
   cursor: pointer;
 }
 

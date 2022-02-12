@@ -1,4 +1,4 @@
-/*-------------------------------CART*/
+/*------------------------------- VIEW CART*/
 /*Cart Detail Title*/
 .cartDetail__title, .cashRegister__title{
     margin: 12px 0;
@@ -162,4 +162,63 @@
     right: 5px;
     bottom: 4px;
     font-size: 23px;
+}
+
+/*-------------------------------Component Adminbar*/
+.adminBar{
+    justify-content: center;
+    margin: 10px 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-bg-adminBar);
+    border-radius: 5px;
+    gap: 20px;
+}
+
+/*icons of the AdminBar*/
+.adminBar__principalIcon{
+    color: var(--color-font-adminBar);
+    font-size: 43px;
+    width: 43px;
+    height: 43px;
+}
+.adminBar__principalIconUser{
+    /*background-color: var(--color-font-adminBar);*/
+    color: var(--color-font-adminBar);
+    border-radius: 50px;
+}
+
+/*------------------------------- VIEW ADMIN PRINCIPAL*/
+.alerts{
+    width: 100%;
+    height: 468px;
+}
+
+.alerts__bar{
+    color:var(--color-font-title);
+    font-size: 17px;
+}
+
+.alerts__item{
+    width: 100%;
+    height: 55px;
+    background-color: var(--color-bg-cards);
+    border-radius: 5px;
+    margin: 5px 0;
+    justify-content: space-evenly;
+}
+
+.alerts__itemName{
+    color: var(--color-font-itemCards);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.alerts__buttonSetup{
+    background-color: var(--color-bg-btnOk);
+    color: var(--color-font-btn);
+    font-size: 12px;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 6px;
 }

@@ -3,6 +3,7 @@ const express=require("express");
 const app=express();
 const indexRouter=require("./routes/mainRouts.js");
 const cartRouter=require('./routes/cartRouts.js');
+const adminRouter=require('./routes/adminRouts.js');
 
 /* Settings */
 const PORT=process.env.PORT || 3003;
@@ -16,7 +17,8 @@ app.use(express.urlencoded({ extended:false }));
 
 /* Routes Asignations */
 app.use(indexRouter);
-app.use(cartRouter)
+app.use(cartRouter);
+app.use(adminRouter);
 
 
 /* Start Server */

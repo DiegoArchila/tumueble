@@ -4,14 +4,17 @@
     --color-bg-cards:#FFFFFF;
     --color-bg-primary: #232F3E;
     --color-bg-miniBanner: #04536C;
+    --color-bg-adminBar: #FFFFFF;
     --color-bg-btnOk:#9DB31A;
     --color-bg-btnFail:#E74C3C;
 
+    --color-font-itemCards:#000000;
     --color-font-btn:#FFFFFF;
     --color-font-icons: #FFFFFF;
     --color-font-title:#FF5200;
     --color-font-text-footer:#FFFFFF;
     --color-font-menuBar:#FFFFFF;
+    --color-font-adminBar:#04536C;
     --color-font-priceGross:#8E8E8E;
     
   

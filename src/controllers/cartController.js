@@ -34,13 +34,20 @@ const cart=require("../databases/business/cart.json");
 
 /** Format the price to currency COP
  */
-const toCOP = new Intl.NumberFormat("es-CO", {
-    style:"currency",
-    currency:"COP",
-    minimumFractionDigits:0
-});
+const {toCOP} =require("../lib/formats.js");
 
+/**contains the sum of the order
+ * 
+ */
 const totalOrder=0;
+
+/**MiniBanner
+ * For more information see /wiews/partials/miniBanner.ejs
+ */
+const minibar={
+    title:"Carrito de compras",
+    icon:"mdi:cash-register"
+};
 
 module.exports= {
     cart: (req,res)=> res.render("cart.ejs", {
@@ -48,6 +55,7 @@ module.exports= {
         settingGeneral,
         cart,
         toCOP,
-        totalOrder
+        totalOrder,
+        minibar
     })
 };

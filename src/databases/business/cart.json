@@ -40,7 +40,7 @@
         "name": "Comedor 6 Puestos Carson", 
         "urlImg": "/img/store/products/comedores/carson_6puestos-scaled.jpg",
         "units": 1,
-        "taxes" : {
+        "taxes": {
             "iva":19
         },
         "priceGross": 8023000,
