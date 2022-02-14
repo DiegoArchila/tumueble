@@ -1,3 +1,4 @@
+const products=require("../databases/business/products.json");
 const orders=require("../databases/business/orders.json");
 
 /**Index contain information from title the page.
@@ -44,7 +45,9 @@ module.exports = {
     res.render("./admin/products.ejs", {
       index,
       settingGeneral,
+      minibar,
       toCOP,
+      products
     });
   },
 };

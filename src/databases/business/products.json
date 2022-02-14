@@ -45,8 +45,9 @@
         "taxes": {
             "iva": 16
         },
-        "price": 2599990,
-        "discount": 10
+        "priceGross": 4199990,
+        "priceFinal": 5215000, 
+        "discount": 38
     },
     {
         "id": 3, 
@@ -69,8 +70,9 @@
         "taxes": {
             "iva": 16
         },
-        "price": 1701993,
-        "discount": 26
+        "priceGross": 4199990,
+        "priceFinal": 5215000, 
+        "discount": 38
     },
     {
         "id": 4, 
@@ -93,8 +95,9 @@
         "taxes": {
             "iva": 16
         },
-        "price": 2419990,
-        "discount": 0
+        "priceGross": 4199990,
+        "priceFinal": 5215000, 
+        "discount": 38
     },
     {
         "id": 5, 
@@ -117,7 +120,8 @@
         "taxes": {
             "iva": 16
         },
-        "price": 1399990,
-        "discount": 0
-    }
+        "priceGross": 4199990,
+        "priceFinal": 5215000, 
+        "discount": 38
+    } 
 ]
