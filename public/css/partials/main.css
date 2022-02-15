@@ -305,6 +305,14 @@
     box-shadow: 0px 0px 5px 0px #000000;
 }
 
+.product__imagesDescription{
+    display: block;
+    width: 100%;
+    resize: none;
+    padding: 5px;
+}
+
+/*Buttons*/
 .product__imagesButtonAdd{
     width: 100%;   
     overflow-x: auto;

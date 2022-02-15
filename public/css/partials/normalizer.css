@@ -42,3 +42,11 @@ li {
 button{
   border-style: none;
 }
+
+input, textarea{
+  font-family: var(--font-RedHatDispaly);
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 13px;
+}
