@@ -1,0 +1,66 @@
+<!--
+    Objects needs for works
+
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("../partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('../partials/header.ejs')%>
+
+        <!--MiniBanner-->
+        <!--Config-->
+            <% minibar = {
+                title:"Admin",
+                icon:"eos-icons:admin-outlined"
+            } %> 
+        <%- include('../partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            
+            <!--ADMINBAR-->
+            <%- include('../components/adminBar.ejs')%>    
+            
+            <section class="product">
+                <nav class="product__bar flx-ctr product__titleNewProduct">
+                    <h1 class="product__titleNewProduct">Producto Nuevo</h1>
+                </nav>
+                
+                <!-- Form new product  -->
+                <form class="product__form" action="/admin/products/new" method="post" enctype="multipart/form-data">
+                    <div class="flx-ctr">
+                        <label class="product__inputText" for="product__imagesContainer">
+                            Imagenes
+                        </label>
+                        
+                    </div>
+
+                    <div class="product__imagesContainer">
+                        <div class="product__imagesSlider flx-ctr">
+                            <!--Here, the cards of the images at pre-upload-->
+                            <img class="product__imagen" src="/img/store/products/camas/cama_felder.jpg" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/colchones/MIGUEL-ANGEL-600x600.png" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/comedores/carson_6puestos-scaled.jpg" alt="Acá descripccion de la imagen">
+                            <img class="product__imagen" src="/img/store/products/salas/SalaMilan.jpg" alt="Acá descripccion de la imagen">
+                        </div>
+                        <input type="file" name="" id="" class="product__imagesButtonAdd" multiple accept="image/png, .jpg, .jpeg, image/gif">
+                        <label for="">Propiedades</label>
+                        <textarea name="" id="" cols="40" rows="3" 
+                        placeholder="Ingrese una descripción de la imagen...">
+                        </textarea>
+                    </div>
+                </form>
+               
+            </section>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('../partials/footer.ejs') %> 
+        
+    </body>
+</html>

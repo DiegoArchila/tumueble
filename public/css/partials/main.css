@@ -229,7 +229,7 @@
     width: 100%; 
 }
 
-.product__title{
+.product__title, .product__titleNewProduct{
     color:var(--color-font-title);
     font-size: 17px;
 }
@@ -261,4 +261,52 @@
 
 .product__buttonEdit{
     font-size: 27px;
+}
+
+/*----------------------------------- VIEW ADMIN PRODUCT*/
+.product__titleNewProduct{
+    justify-content: center;
+}
+
+.product__form{
+    height: 1064px;
+    border-radius: 5px;
+    background-color: var(--color-bg-cards);
+    padding: 10px;
+}
+
+.product__imagesContainer{
+    height: 240px;
+    padding: 5px;
+}
+
+.product__inputText{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.product__imagesSlider{
+    height: 128px;
+    padding: 3px 5px;
+    overflow-x: scroll;
+    overflow-y: auto;
+    gap: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.product__imagen{
+    width: 148px;
+    height: 120px;
+    border-radius: 5px;
+}
+
+.product__imagen:hover{
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.product__imagesButtonAdd{
+    width: 100%;   
+    overflow-x: auto;
+    text-align: right;
 }

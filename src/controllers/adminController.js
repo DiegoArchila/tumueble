@@ -50,4 +50,13 @@ module.exports = {
       products
     });
   },
+  newProduct: (req, res) => {
+    res.render("./admin/newProduct.ejs", {
+      index,
+      settingGeneral,
+      minibar,
+      toCOP,
+      
+    });
+  },
 };

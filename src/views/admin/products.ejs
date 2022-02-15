@@ -29,8 +29,10 @@
                 <nav class="product__bar flx-ctr">
                     <h1 class="product__title">Productos</h1>
                     <button class="product__buttonCreate">
-                        Nuevo
-                        <i class="iconify product__buttonIcon" data-icon="carbon:add"></i>
+                        <a href="/admin/products/new" class="product__buttonCreateLink">
+                            Nuevo
+                            <i class="iconify product__buttonIcon" data-icon="carbon:add"></i>
+                        </a>
                     </button>
                 </nav>
                 
@@ -55,7 +57,7 @@
                     <%}) %>
                             
                 <% } else {%>
-                    <!--Orders is empty->
+                    <!--Products is empty->
                 <% } %>        
             </section>
         </main>

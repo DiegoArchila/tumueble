@@ -8,4 +8,6 @@ router.get("/admin", adminController.admin);
 
 router.get("/admin/products", adminController.products);
 
+router.get("/admin/products/new", adminController.newProduct);
+
 module.exports=router;
