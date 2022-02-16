@@ -39,6 +39,7 @@
                         
                     </div>
 
+                    <!--Container images-->
                     <div class="product__imagesContainer">
                         <div class="product__imagesSlider flx-ctr">
                             <!--Here, the cards of the images at pre-upload-->
@@ -56,11 +57,22 @@
                         <textarea class="product__imagesDescription" name="" id="" rows="3" 
                         placeholder="Ingrese una descripción de la imagen..."></textarea>
 
-                        <label class="product__inputText" for="product__imagesContainer">
-                            ¿Es la imagen principal?
-                        </label>
-
+                        <div class="product__imagesIsMainContiner flx-ctr">
+                            <label class="product__inputText" for="product__imagesContainer">
+                                ¿Es la imagen principal?
+                            </label>
+                            <div class="product__imagesContainerRadio">
+                                <label class="product__inputText">Si</label>
+                                <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="1">
+                            </div>
+                            <div class="product__imagesContainerRadio">
+                                <label class="product__inputText">No</label>
+                                <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="0">
+                            </div>
+                        </div>
                     </div>
+                    
+                    
                 </form>
                
             </section>

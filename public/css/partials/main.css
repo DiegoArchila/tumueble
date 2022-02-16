@@ -282,11 +282,11 @@
 
 .product__inputText{
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .product__imagesSlider{
-    height: 128px;
+    height: 148px;
     padding: 3px 5px;
     overflow-x: scroll;
     overflow-y: auto;
@@ -302,7 +302,7 @@
 }
 
 .product__imagen:hover{
-    box-shadow: 0px 0px 5px 0px #000000;
+    box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
 }
 
 .product__imagesDescription{
@@ -317,4 +317,14 @@
     width: 100%;   
     overflow-x: auto;
     text-align: right;
+}
+
+/*Radios*/
+.product__imagesIsMainContiner{
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.product__imagen-IsMain{
+    margin-bottom: 0px;
 }
