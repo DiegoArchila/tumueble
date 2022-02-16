@@ -34,7 +34,7 @@
                 <form class="product__form" action="/admin/products/new" method="post" enctype="multipart/form-data">
                     <div class="flx-ctr">
                         <label class="product__inputText" for="product__imagesContainer">
-                            Imagenes
+                            Imagenes *
                         </label>
                         
                     </div>
@@ -49,7 +49,7 @@
                             <img class="product__imagen" src="/img/store/products/salas/SalaMilan.jpg" alt="Acá descripccion de la imagen">
                         </div>
                         
-                        <input type="file" name="" id="" class="product__imagesButtonAdd" multiple accept="image/png, .jpg, .jpeg, image/gif">
+                        <input type="file" name="" id="" class="product__imagesButtonAdd" multiple accept="image/png, .jpg, .jpeg, image/gif" required>
                         
                         <label class="product__inputText" for="product__imagesContainer">
                             Propiedades
@@ -70,15 +70,14 @@
                                 <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="0"
                                 placeholder="">
                             </div>
-                        </div>
-                        
+                        </div> 
                     </div>
                     
                     <!--name-->
                     <label class="product__inputText" for="">
                         Nombre *
                     </label>
-                    <input type="text" name="name" id="" required min="2" maxlength="128"
+                    <input type="text" name="name" id="" required minlength="2" maxlength="128"
                     placeholder="Ingrese el nombre del producto...">
 
                     <!--Description-->
@@ -93,21 +92,82 @@
                     <label class="product__inputText">
                         Acabado *
                     </label>
-                    <input type="text" name="terminated" id="" required min="2" maxlength="64"
+                    <input type="text" name="terminated" id="" required minlength="2" maxlength="64"
                     placeholder="Ingrese el acabado del producto...">    
                     
                     <!--SKU-->
                     <label class="product__inputText">
                         Sku
                     </label>
-                    <input type="text" name="sku" id="" min="2" maxlength="64"
+                    <input type="text" name="sku" id="" minlength="2" maxlength="64"
                     placeholder="Ingrese el sku del producto..."> 
 
+                    <!--Category-->
                     <label class="product__inputText">
                         Categoría *
                     </label>
-                    <input type="text" name="sku" id="" min="2" maxlength="64"
-                    placeholder="Seleccione"> 
+                    <select name="category" id="categoryId" class="product__inputCategory" required>
+                        <option value="">Seleccione</option>
+                        <option value="1">Sofás</option>
+                        <option value="2">Mesas</option>
+                        <option value="3">Sillas</option>
+                        <option value="4">Camas</option>
+                        <option value="5">Escritorios</option>
+                        <option value="6">Colchones</option>
+                        <option value="7">Peinadores</option>
+                        <option value="8">Sofa camas</option>
+                    </select>
+
+                    <!--Taxes-->
+                    <label class="product__inputText">
+                        Impuestos *
+                    </label>
+                    <select name="taxes" id="taxesId" class="product__inputTaxes" required>
+                        <option value="">Seleccione</option>
+                        <option value="1">Iva 19%</option>
+                        <option value="2">Iva 8%</option>
+                        <option value="3">No aplica</option>
+                    </select>
+
+                    <!--Units-->
+                    <label class="product__inputText">
+                        Unidades disponibles *
+                    </label>
+                    <input type="number" class="product__inputUnits" name="units" id="unitsId" min="0" required
+                    placeholder="Ingrese las unidades...">
+
+                    <!--Price gross-->
+                    <label class="product__inputText">
+                        Precio bruto *
+                    </label>
+                    <input type="number" class="product__inputPriceGross" name="priceGross" id="priceGrossId" min="0" required
+                    placeholder="Ingrese el precio bruto...">
+
+                    <!--Price final-->
+                    <label class="product__inputText">
+                        Precio final *
+                    </label>
+                    <input type="number" class="product__inputPriceFinal" name="priceFinal" id="priceFinalId" min="0" required
+                    placeholder="Ingrese el precio final...">
+
+                    <!--discount-->
+                    <label class="product__inputText">
+                        Descuento * <span class="product__inputLabelDescription">(automático)</span>
+                    </label>
+                    <input type="number" disabled class="product__inputDiscount" name="discount" id="discountId" min="0" required
+                    placeholder="Esperando precio bruto y final...">
+
+                    <!--buttons-->
+                    <div class="flx-ctr">
+                        <button type="reset" class="product__buttons product__buttonClear flx-ctr">
+                            <i class="iconify" data-icon="ic:baseline-restore"></i>
+                            Restablecer
+                        </button>
+                        <button type="submit" class="product__buttons product__buttonSend flx-ctr">
+                            Crear
+                            <i class="iconify" data-icon="mdi:cube-send"></i>
+                        </button>
+                    </div>
                 </form>
                
             </section>

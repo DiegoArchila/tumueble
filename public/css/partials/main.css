@@ -145,7 +145,6 @@
 .cashRegister__buttonPayOrder{
     background-color: var(--color-bg-btnOk);
     text-align: center;
-
     font-size: 13px;
 }
 
@@ -270,10 +269,11 @@
 }
 
 .product__form{
-    height: 1064px;
     border-radius: 5px;
     background-color: var(--color-bg-cards);
     padding: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
 .product__imagesContainer{
@@ -313,11 +313,51 @@
     resize: none;
 }
 
+.product__inputUnits,.product__inputDiscount,
+.product__inputPriceGross,.product__inputPriceFinal{
+    text-align: center;
+}
+
+input.product__inputUnits, .product__inputTaxes{
+    width: 100%;
+    text-align: center;
+}
+
+.product__inputLabelDescription{
+    font-style: italic;
+    font-size: 13px;
+    color: var(--color-font-adminBar);
+}
+
 /*Buttons*/
 .product__imagesButtonAdd{
     width: 100%;   
     overflow-x: auto;
     text-align: right;
+}
+
+.product__buttons{
+    color: var(--color-font-btn);
+    font-weight: bold;
+    padding: 5px 10px;
+    height: 30px;
+    font-size: 15px;
+    gap: 3px;
+}
+
+.product__buttons svg{
+    font-size: 23px;
+}
+
+.product__buttonClear{
+    background-color: var(--color-bg-btnFail);
+    text-align: right;
+    padding-right: 10px;
+}
+
+.product__buttonSend{
+    background-color: var(--color-bg-btnOk);
+    text-align: center;
 }
 
 /*Radios*/
@@ -329,4 +369,10 @@
 
 .product__imagen-IsMain{
     margin: 0px 5px;
+}
+
+/*Select*/
+select.product__inputCategory{
+    width: 100%;
+    text-align: center;
 }
