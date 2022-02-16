@@ -54,25 +54,60 @@
                         <label class="product__inputText" for="product__imagesContainer">
                             Propiedades
                         </label>
-                        <textarea class="product__imagesDescription" name="" id="" rows="3" 
+                        <textarea class="product__imagesDescription" name="imagenDescription" id="" rows="3" 
                         placeholder="Ingrese una descripción de la imagen..."></textarea>
 
                         <div class="product__imagesIsMainContiner flx-ctr">
                             <label class="product__inputText" for="product__imagesContainer">
                                 ¿Es la imagen principal?
                             </label>
-                            <div class="product__imagesContainerRadio">
+                            <div class="product__imagesContainerRadio flx-ctr">
                                 <label class="product__inputText">Si</label>
                                 <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="1">
                             </div>
-                            <div class="product__imagesContainerRadio">
+                            <div class="product__imagesContainerRadio flx-ctr">
                                 <label class="product__inputText">No</label>
-                                <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="0">
+                                <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="0"
+                                placeholder="">
                             </div>
                         </div>
+                        
                     </div>
                     
+                    <!--name-->
+                    <label class="product__inputText" for="">
+                        Nombre *
+                    </label>
+                    <input type="text" name="name" id="" required min="2" maxlength="128"
+                    placeholder="Ingrese el nombre del producto...">
+
+                    <!--Description-->
+                    <label class="product__inputText">
+                        Descripción *
+                    </label>
+                    <textarea class="product__inputDescription" name="description" id="" rows="4"
+                        minlength="2" maxlength="512" required
+                        placeholder="Ingrese la descripción del producto..."></textarea>
+
+                    <!--Terminate-->
+                    <label class="product__inputText">
+                        Acabado *
+                    </label>
+                    <input type="text" name="terminated" id="" required min="2" maxlength="64"
+                    placeholder="Ingrese el acabado del producto...">    
                     
+                    <!--SKU-->
+                    <label class="product__inputText">
+                        Sku
+                    </label>
+                    <input type="text" name="sku" id="" min="2" maxlength="64"
+                    placeholder="Ingrese el sku del producto..."> 
+
+                    <label class="product__inputText">
+                        Categoría *
+                    </label>
+                    <input type="text" name="sku" id="" min="2" maxlength="64"
+                    placeholder="Seleccione"> 
                 </form>
                
             </section>

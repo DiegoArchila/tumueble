@@ -252,6 +252,7 @@
     height: 22px;
     text-align: left;
 }
+
 .product__buttonIcon{
     top: 2px;
     right: 3px;
@@ -276,20 +277,22 @@
 }
 
 .product__imagesContainer{
-    height: 240px;
+    height: 350px;
     padding: 5px;
+    display: block;
 }
 
 .product__inputText{
     font-weight: bold;
     font-size: 15px;
+    padding-left: 10px;
+    display: block;
 }
 
 .product__imagesSlider{
     height: 148px;
     padding: 3px 5px;
     overflow-x: scroll;
-    overflow-y: auto;
     gap: 12px;
     border-radius: 5px;
     margin-bottom: 8px;
@@ -307,9 +310,7 @@
 
 .product__imagesDescription{
     display: block;
-    width: 100%;
     resize: none;
-    padding: 5px;
 }
 
 /*Buttons*/
@@ -323,8 +324,9 @@
 .product__imagesIsMainContiner{
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 13px;
 }
 
 .product__imagen-IsMain{
-    margin-bottom: 0px;
+    margin: 0px 5px;
 }

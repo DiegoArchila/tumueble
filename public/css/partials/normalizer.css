@@ -43,10 +43,25 @@ button{
   border-style: none;
 }
 
-input, textarea{
+input[type="text"], input[type="file"], textarea{
   font-family: var(--font-RedHatDispaly);
   font-size: 15px;
   font-weight: normal;
   margin-top: 5px;
   margin-bottom: 13px;
+  border-radius: 3px;
+  border-color: var(--color-font-adminBar);
+  width: 100%;
+  padding: 5px;
+  display: block;
+  resize: none;
+}
+
+input[type="text"], textarea{
+  border-width: 1px;
+  border-style: solid;
+}
+
+input[type="file"]{
+  margin-bottom: 5px;
 }
