@@ -282,13 +282,6 @@
     display: block;
 }
 
-.product__inputText{
-    font-weight: bold;
-    font-size: 15px;
-    padding-left: 10px;
-    display: block;
-}
-
 .product__imagesSlider{
     height: 148px;
     padding: 3px 5px;
@@ -373,6 +366,40 @@ input.product__inputUnits, .product__inputTaxes{
 
 /*Select*/
 select.product__inputCategory{
+    width: 100%;
+    text-align: center;
+}
+
+/*-------------------------------------- VIEW ADMIN USER*/
+
+/* .user{
+
+} */
+
+.user__bar{
+    width: 100%;
+}
+
+.user__barTitle{
+    color:var(--color-font-title);
+    font-size: 17px;
+}
+
+.user__container{
+    border-radius: 5px;
+    background-color: var(--color-bg-cards);
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.user__containerMiddle{
+    width: 50%;
+    margin: 0px 2px;
+}
+
+/*Select*/
+select.user__inputGender{
     width: 100%;
     text-align: center;
 }

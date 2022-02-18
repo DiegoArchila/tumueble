@@ -56,7 +56,13 @@ module.exports = {
       settingGeneral,
       minibar,
       toCOP,
-      
+    });
+  },
+  user: (req, res) => {
+    res.render("./admin/adminUser.ejs", {
+      index,
+      settingGeneral,
+      minibar,
     });
   },
 };

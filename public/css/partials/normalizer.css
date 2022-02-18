@@ -45,7 +45,9 @@ button{
 }
 
 input[type="text"], input[type="file"], 
-input[type="number"], textarea, select{
+input[type="number"], input[type="email"],
+input[type="date"],input[type="password"],
+textarea, select{
   font-family: var(--font-RedHatDispaly);
   font-size: 15px;
   font-weight: normal;
@@ -59,7 +61,9 @@ input[type="number"], textarea, select{
   resize: none;
 }
 
-input[type="text"],input[type="number"], textarea{
+input[type="text"],input[type="number"], 
+input[type="date"],input[type="email"],
+input[type="password"],textarea{
   border-width: 1px;
   border-style: solid;
 }
@@ -71,4 +75,11 @@ input[type="file"]{
 
 select{
   background-color: var(--color-bg-cards);
+}
+
+.product__inputText, .user__inputText{
+  font-weight: bold;
+  font-size: 15px;
+  padding-left: 10px;
+  display: block;
 }
