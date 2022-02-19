@@ -55,6 +55,7 @@ textarea, select{
   margin-bottom: 13px;
   border-radius: 3px;
   border-color: var(--color-font-adminBar);
+  background-color: var(--color-bg-cards);
   padding: 5px;
   width: 100%;
   display: block;

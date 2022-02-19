@@ -31,32 +31,32 @@
                 <form action="/admin/user" method="post" class="user__container">
                     
                     <!--names-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="firstName">
                         Nombres *
                     </label>
-                    <input type="text" name="firstName" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="firstName" id="firstName" required minlength="2" maxlength="128"
                     placeholder="Ingrese los nombres...">
 
                     <!--last names-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="lastName">
                         Apellidos *
                     </label>
-                    <input type="text" name="lastName" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="lastName" id="lastName" required minlength="2" maxlength="128"
                     placeholder="Ingrese los apellidos...">
 
                     <!--Display Elements by row in flex-->
                     <div class="flx-ctr">
                         <div class="user__containerMiddle">
                             <!--date born-->
-                            <label class="user__inputText" for="">
-                                Fecha de nacimiento *
+                            <label class="user__inputText" for="dateBorn">
+                                Fecha nacimiento *
                             </label>
-                            <input type="date" name="dateBorn" id="" required >
+                            <input type="date" name="dateBorn" id="dateBorn" required >
                         </div>
     
                         <div class="user__containerMiddle">
                             <!--Category-->
-                            <label class="user__inputText">
+                            <label class="user__inputText" for="gender">
                                 Genero *
                             </label>
                             <select name="gender" id="gender" class="user__inputGender" required>
@@ -69,48 +69,60 @@
                     </div>
                     
                     <!--email-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="country">
                         Email *
                     </label>
                     <input type="email" name="mail" id="mail" required minlength="2" maxlength="128 "
                     placeholder="Ingrese el email">
 
                     <!--Country-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="country">
                         Pais *
                     </label>
-                    <input type="text" name="country" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="country" id="country" required minlength="2" maxlength="128"
                     placeholder="Ingrese el país...">
 
                     <!--province state-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="province-state">
                         Provincia/Estado *
                     </label>
-                    <input type="text" name="province-state" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="province-state" id="province-state" required minlength="2" maxlength="128"
                     placeholder="Ingrese la provincia o estado...">
 
                     <!--City town-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="city-town">
                         Ciudad/Pueblo *
                     </label>
-                    <input type="text" name="city-town" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="city-town" id="city-town" required minlength="2" maxlength="128"
                     placeholder="Ingrese la ciudad o el pueblo...">
 
                     <!--Address line-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="address">
                         Dirección *
                     </label>
-                    <input type="text" name="address" id="" required minlength="2" maxlength="128"
+                    <input type="text" name="address" id="addresss" required minlength="2" maxlength="128"
                     placeholder="Ingrese la dirección...">
 
                     <!--Password-->
-                    <label class="user__inputText" for="">
+                    <label class="user__inputText" for="password">
                         Contraseña *
                     </label>
-                    <input type="password" name="password" id="" required minlength="2" maxlength="64"
+                    <input type="password" name="password" id="password" required minlength="2" maxlength="64"
                     placeholder="Ingrese la contraseña...">
-                    <input type="password" name="passwordRetry" id="" required minlength="2" maxlength="64"
+                    <input type="password" name="passwordRetry" id="passwordRetry" required minlength="2" maxlength="64"
                     placeholder="Repita la contraseña...">
+
+                    <!--buttons-->
+                    <div class="flx-ctr">
+                        <button type="reset" class="product__buttons product__buttonClear flx-ctr">
+                            <i class="iconify" data-icon="ic:baseline-restore"></i>
+                            Restablecer
+                        </button>
+                        <button type="submit" class="product__buttons product__buttonSend flx-ctr">
+                            Editar
+                            <i class="iconify" data-icon="fluent:person-settings-20-regular"></i>
+                        </button>
+                    </div>    
                 </form>
             </section>
         </main>
