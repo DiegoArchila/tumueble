@@ -62,6 +62,14 @@ textarea, select{
   resize: none;
 }
 
+input[type="text"]:hover, input[type="file"]:hover, 
+input[type="number"]:hover, input[type="email"]:hover,
+input[type="date"]:hover,input[type="password"]:hover,
+textarea:hover, select:hover{
+  border-color: var(--color-bg-btnOk);
+  box-shadow: 0px 0px 5px 0px var(--color-bg-btnOk);
+}
+
 input[type="text"],input[type="number"], 
 input[type="date"],input[type="email"],
 input[type="password"],textarea{
