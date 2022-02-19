@@ -70,6 +70,15 @@ textarea:hover, select:hover{
   box-shadow: 0px 0px 5px 0px var(--color-bg-btnOk);
 }
 
+
+input[type="text"]:active, input[type="file"]:active, 
+input[type="number"]:active, input[type="email"]:active,
+input[type="date"]:active,input[type="password"]:active,
+textarea:active, select:active{
+  border-color: var(--color-bg-btnOk);
+}
+
+
 input[type="text"],input[type="number"], 
 input[type="date"],input[type="email"],
 input[type="password"],textarea{
