@@ -10,10 +10,17 @@ html {
 }
 
 body{
-  background-color: var(--color-bg-body);
-  min-height: 100vh;
-  display: flex;
+  /* background-color: var(--color-bg-body);
+  min-height: 100vh;*/
+  
   flex-direction: column;
+  width: 100%;
+  display: flex;
+  margin: 0px;
+  min-height: 100vh;
+  background-image: url("../../img/store/purty_wood.png");
+  background-repeat: repeat;
+  background-position: inherit;
 }
 
 .menuBar,
