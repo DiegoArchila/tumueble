@@ -31,52 +31,51 @@
             placeholder="Ingrese una descripción de la imagen..."></textarea>
 
             <div class="product__imagesIsMainContiner flx-ctr">
-                <label class="product__inputText" for="product__imagesContainer">
+                <label class="product__inputText">
                     ¿Es la imagen principal?
                 </label>
                 <div class="product__imagesContainerRadio flx-ctr">
-                    <label class="product__inputText">Si</label>
-                    <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="1">
+                    <label class="product__inputText" for="mainImagenYes">Si</label>
+                    <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="mainImagenYes" value="1">
                 </div>
                 <div class="product__imagesContainerRadio flx-ctr">
-                    <label class="product__inputText">No</label>
-                    <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="" value="0"
-                    placeholder="">
+                    <label class="product__inputText" for="mainImagenNo">No</label>
+                    <input type="radio" class="product__imagen-IsMain" name="imagen-isMain" id="mainImagenNo" value="0">
                 </div>
             </div> 
         </div>
         
         <!--name-->
-        <label class="product__inputText" for="">
+        <label class="product__inputText" for="name">
             Nombre *
         </label>
-        <input type="text" name="name" id="" required minlength="2" maxlength="128"
+        <input type="text" name="name" id="name" required minlength="2" maxlength="128"
         placeholder="Ingrese el nombre del producto...">
 
         <!--Description-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="description">
             Descripción *
         </label>
-        <textarea class="product__inputDescription" name="description" id="" rows="4"
+        <textarea class="product__inputDescription" name="description" id="description" rows="4"
             minlength="2" maxlength="512" required
             placeholder="Ingrese la descripción del producto..."></textarea>
 
         <!--Terminate-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="terminated">
             Acabado *
         </label>
-        <input type="text" name="terminated" id="" required minlength="2" maxlength="64"
+        <input type="text" name="terminated" id="terminated" required minlength="2" maxlength="64"
         placeholder="Ingrese el acabado del producto...">    
         
         <!--SKU-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="sku">
             Sku
         </label>
-        <input type="text" name="sku" id="" minlength="2" maxlength="64"
+        <input type="text" name="sku" id="sku" minlength="2" maxlength="64"
         placeholder="Ingrese el sku del producto..."> 
 
         <!--Category-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="categoryId">
             Categoría *
         </label>
         <select name="category" id="categoryId" class="product__inputCategory" required>
@@ -92,7 +91,7 @@
         </select>
 
         <!--Taxes-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="taxesId">
             Impuestos *
         </label>
         <select name="taxes" id="taxesId" class="product__inputTaxes" required>
@@ -103,28 +102,28 @@
         </select>
 
         <!--Units-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="unitsId">
             Unidades disponibles *
         </label>
         <input type="number" class="product__inputUnits" name="units" id="unitsId" min="0" required
         placeholder="Ingrese las unidades...">
 
         <!--Price gross-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="priceGrossId">
             Precio bruto *
         </label>
         <input type="number" class="product__inputPriceGross" name="priceGross" id="priceGrossId" min="0" required
         placeholder="Ingrese el precio bruto...">
 
         <!--Price final-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="priceFinalId">
             Precio final *
         </label>
         <input type="number" class="product__inputPriceFinal" name="priceFinal" id="priceFinalId" min="0" required
         placeholder="Ingrese el precio final...">
 
         <!--discount-->
-        <label class="product__inputText">
+        <label class="product__inputText" for="discountId">
             Descuento * <span class="product__inputLabelDescription">(automático)</span>
         </label>
         <input type="number" disabled class="product__inputDiscount" name="discount" id="discountId" min="0" required

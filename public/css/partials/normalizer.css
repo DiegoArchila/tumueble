@@ -19,6 +19,7 @@ body{
 .menuBar,
 .miniBanner,
 main,
+.login__container,
 .footer__container {
   width: 95%;
   margin: 0 auto;
@@ -96,7 +97,7 @@ select{
   background-color: var(--color-bg-cards);
 }
 
-.product__inputText, .user__inputText{
+.product__inputText, .user__inputText, .login__inputText{
   font-weight: bold;
   font-size: 15px;
   padding-left: 10px;
