@@ -42,12 +42,13 @@
 }
 
 /*Input*/
-.cartDetail__itemInput{
+input.cartDetail__itemInput{
     width: 26px;
     height: 26px;
     font-size: 18px;
     border-style: none;
     text-align: center;
+    margin: 0px;  
 }
 
 /*Pruduct*/
