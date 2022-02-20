@@ -1,0 +1,34 @@
+<!--
+    Objects needs for works
+
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("./partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('./partials/header.ejs')%>
+
+        <!--MiniBanner-->
+        <!--Config-->
+            <% minibar = {
+                title:"Ingresar",
+                icon:"ant-design:user-outlined"
+            } %> 
+        <%- include('./partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main class="login__main flx-ctr login">
+            
+
+
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('./partials/footer.ejs') %> 
+        
+    </body>
+</html>

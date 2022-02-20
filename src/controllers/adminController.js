@@ -29,7 +29,7 @@ const settingGeneral = require("../databases/settingGeneralSite.json");
 minibar = {
   title: "Admin Principal",
   icon: "eos-icons:admin-outlined",
-},
+}
 
 module.exports = {
   admin: (req, res) => {

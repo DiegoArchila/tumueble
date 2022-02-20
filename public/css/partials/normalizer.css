@@ -11,6 +11,9 @@ html {
 
 body{
   background-color: var(--color-bg-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .menuBar,
@@ -66,8 +69,7 @@ input[type="text"]:hover, input[type="file"]:hover,
 input[type="number"]:hover, input[type="email"]:hover,
 input[type="date"]:hover,input[type="password"]:hover,
 textarea:hover, select:hover{
-  border-color: var(--color-bg-btnOk);
-  box-shadow: 0px 0px 5px 0px var(--color-bg-btnOk);
+  box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
 }
 
 
@@ -78,10 +80,9 @@ textarea:active, select:active{
   border-color: var(--color-bg-btnOk);
 }
 
-
 input[type="text"],input[type="number"], 
 input[type="date"],input[type="email"],
-input[type="password"],textarea{
+input[type="password"],textarea, select{
   border-width: 1px;
   border-style: solid;
 }

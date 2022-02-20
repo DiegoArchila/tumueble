@@ -1,5 +1,8 @@
 footer {
   background-color: var(--color-bg-primary);
+  bottom: 0px;
+  width: 100%;
+  margin-top: auto;
 }
 
 /* Component: footer */
@@ -34,9 +37,13 @@ footer {
     height: 29px;
 }
 
+.footer__rights{
+  text-align: center;
+}
+
+
 .footer__linkRights{
     text-align: center;
     color: var(--color-font-text-footer);
-
 }
 
