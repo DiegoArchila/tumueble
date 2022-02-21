@@ -17,7 +17,7 @@ router.post("/admin/user", adminController.user);
  * Admin Products
  */
 router.get("/admin/products", adminController.products);
-router.get("/admin/products/new", adminController.newProduct);
-router.post("/admin/products/new", adminController.newProduct);
+router.get("/admin/products/create", adminController.createProduct);
+router.post("/admin/products/create", adminController.createProduct);
 
 module.exports=router;

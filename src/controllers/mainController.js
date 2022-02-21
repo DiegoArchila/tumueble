@@ -2,6 +2,8 @@ const dirDatabases="../databases/";
 const settingGeneral= require("../databases/settingGeneralSite.json");
 const index= require("../databases/index.json");
 
+const {validationResult}=require("express-validator");
+
 /**MiniBanner
 * For more information see /wiews/partials/miniBanner.ejs
 */

@@ -50,8 +50,8 @@ module.exports = {
       products
     });
   },
-  newProduct: (req, res) => {
-    res.render("./admin/newProduct.ejs", {
+  createProduct: (req, res) => {
+    res.render("./admin/createProduct.ejs", {
       index,
       settingGeneral,
       minibar,
