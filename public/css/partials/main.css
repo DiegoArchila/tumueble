@@ -7,7 +7,7 @@
 }
 
 .cartDetail__container{
-    height: 364px;
+    height: 420px;
     overflow-y: auto;
     border-radius: 5px;
 }
@@ -445,6 +445,7 @@ input[class="login__input"],input[class="login__input"]{
     color: var(--color-font-title);
     text-align: center;
     font-size: 14px;
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -460,3 +461,9 @@ input[class="login__input"],input[class="login__input"]{
     font-weight: bold;
     color: var(--color-font-fail);
 }
+
+.login__buttonPosition{
+    margin-top: 10px;
+    justify-content: center;
+}
+
