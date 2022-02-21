@@ -35,7 +35,20 @@ const login = async (req,res) => {
     }
 }
 
+const createUser = async (req,res) => {
+    try {
+        await res.render("createUser.ejs", {
+            settingGeneral,
+            index,
+            minibar
+        });   
+    } catch (error) {
+        throw error   
+    }
+}
+
 module.exports= {
     home,
-    login
+    login,
+    createUser
 }    
