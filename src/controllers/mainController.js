@@ -3,6 +3,7 @@ const settingGeneral= require("../databases/settingGeneralSite.json");
 const index= require("../databases/index.json");
 
 const {validationResult}=require("express-validator");
+const { redirect } = require("express/lib/response");
 
 /**MiniBanner
 * For more information see /wiews/partials/miniBanner.ejs
@@ -10,7 +11,7 @@ const {validationResult}=require("express-validator");
 minibar = {
     title: "Admin Principal",
     icon: "eos-icons:admin-outlined",
-}
+};
 
 const home = async (req,res) => {
     index.title="home";
@@ -22,7 +23,7 @@ const home = async (req,res) => {
     } catch (error) {
         throw error;
     }
-}
+};
 
 const login = async (req,res) => {
     index.title="login";
@@ -35,9 +36,32 @@ const login = async (req,res) => {
     } catch (error) {
         throw error   
     }
-}
+};
+
+
 
 const createUser = async (req,res) => {
+
+    const validations=validationResult(req);
+    console.log(validations.errors);
+
+    if (validations.array.length > 0){
+        return await res.render("createUser.ejs", {
+            settingGeneral,
+            index,
+            minibar,
+            errors:validations.mapped(),
+            old:req.body
+        });
+    }else{
+        res.redirect("/login");
+        console.log("errores de validatios:", validations.mapped);
+    }
+
+};
+
+const showCreateUser = async (req,res) => {
+
     try {
         await res.render("createUser.ejs", {
             settingGeneral,
@@ -52,5 +76,6 @@ const createUser = async (req,res) => {
 module.exports= {
     home,
     login,
+    showCreateUser,
     createUser
 }    
