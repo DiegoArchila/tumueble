@@ -60,7 +60,7 @@
 }
 
 .card .buttons .agregar-carrito {
-  background-color: #ff5200;
+  background-color: var(--color-orange);
   color: white;
   border-radius: 5px;
   height: 30px;
@@ -102,12 +102,12 @@
 
 /*Media query desktop*/
 @media (min-width: 769px) {
-  .card {
+  /*.card {
     transition: box-shadow 1000ms, width 1000ms;
   }
 
   .card:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     width: 300px;
-  }
+  }*/
 }

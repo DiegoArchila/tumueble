@@ -16,6 +16,9 @@
 /*MAIN*/
 @import url("./partials/main.css");
 
+/*SLIDER*/
+@import url("./partials/slider.css");
+
 /*CARD*/
 @import url("./partials/card.css");
 

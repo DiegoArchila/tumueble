@@ -9,54 +9,67 @@
       <div class="content">
         <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
 
-        <!--Cards-->
+        <!--Slider-->
         <div class="content">
-          <% for(let product of products) { %>
-          <div class="card">
-            <div class="card-image">
-              <img
-                src="<%= product.urlImg %> "
-                height="300px"
-                width="300px"
-                alt="<%= product.name %> "
-              />
-            </div>
-            <div class="card-body">
-              <div class="grid">
-                <div class="row">
-                  <p class="title"><%= product.name %></p>
-                </div>
-                <div class="row">
-                  <div class="column">
-                    <div class="buttons">
-                      <button class="detalle">Ver detalle</button>
-                      <button class="agregar-carrito">
-                        Agregar al
-                        <span class="iconify" data-icon="bytesize:cart"></span>
-                      </button>
+          <div class="slider-container">
+            <ul class="slider">
+              <% for(let i=0; i<productsMasComprados.length; i++) { %>
+              <li id="slide<%= i + 1 %>">
+                <div class="card">
+                  <div class="card-image">
+                    <img
+                      src="<%= productsMasComprados[i].urlImg %> "
+                      height="300px"
+                      width="300px"
+                      alt="<%= productsMasComprados[i].name %> "
+                    />
+                  </div>
+                  <div class="card-body">
+                    <div class="grid">
+                      <div class="row">
+                        <p class="title"><%= productsMasComprados[i].name %></p>
+                      </div>
+                      <div class="row">
+                        <div class="column">
+                          <div class="buttons">
+                            <button class="detalle">Ver detalle</button>
+                            <button class="agregar-carrito">
+                              Agregar al
+                              <span
+                                class="iconify"
+                                data-icon="bytesize:cart"
+                              ></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="cost">
+                            <p class="price">
+                              $<%=
+                              Math.round(productsMasComprados[i].price*(1-(((productsMasComprados[i].discount>0)?productsMasComprados[i].discount:0)/100)))
+                              %>
+                            </p>
+                            <% if (productsMasComprados[i].discount>0) { %>
+                            <p class="offer"><%= productsMasComprados[i].discount %> % OFF</p>
+                            <p class="price-normal">$<%= productsMasComprados[i].price %></p>
+                            <% } %>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="column">
-                    <div class="cost">
-                      <p class="price">
-                        $<%=
-                        Math.round(product.price*(1-(((product.discount>0)?product.discount:0)/100)))
-                        %>
-                      </p>
-                      <% if (product.discount>0) { %>
-                      <p class="offer"><%= product.discount %> % OFF</p>
-                      <p class="price-normal">$<%= product.price %></p>
-                      <% } %>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
+              </li>
+              <% } %>
+            </ul>
+            <ul class="slider-menu">
+              <% for( let i = 0; i < productsMasComprados.length; i++ ) { %>
+              <li><a href="#slide<%= i + 1 %>"><%= i+1 %> </a></li>
+              <% } %>
+            </ul>
           </div>
-          <% } %>
-        </div>
-
-        <!--Cards-->
+        </div>    
+        <!--Slider-->
       </div>
     </main>
 
