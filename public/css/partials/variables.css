@@ -1,12 +1,12 @@
-:root{
+:root {
+  --color-bg-primary: #232f3e;
+  --color-font-icons: #ffffff;
+  --color-font-menuBar: #ffffff;
+  --color-bg: #e7e7e7;
 
-    --color-bg-primary: #232F3E;
-    --color-font-icons: #FFFFFF;
-    --color-font-menuBar:#FFFFFF;
-  
-    --text-title-sm:1.2em;
-    --text-title-md:1.6em;
-    --text-title-lg:1.9em;
-  
-    --font-RedHatDispaly: "Red Hat Display", sans-serif;
+  --text-title-sm: 1.2em;
+  --text-title-md: 1.6em;
+  --text-title-lg: 1.9em;
+
+  --font-RedHatDispaly: "Red Hat Display", sans-serif;
 }

@@ -1,0 +1,23 @@
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Media query tablets*/
+@media (min-width: 361px) {
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/*Media query desktop*/
+@media (min-width: 769px) {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
