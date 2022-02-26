@@ -73,7 +73,7 @@ textarea, select{
   resize: none;
 }
 
-input[type="text"]:hover, input[type="file"]:hover, 
+input[type="text"]:hover, 
 input[type="number"]:hover, input[type="email"]:hover,
 input[type="date"]:hover,input[type="password"]:hover,
 textarea:hover, select:hover{

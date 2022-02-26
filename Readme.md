@@ -25,4 +25,7 @@ Las vistas son solo en mobile hasta el momento.
 - /admin/products/create
 
 ###### servidor de pruebas
-http://diarchila-tumueble.herokuapp.com/
+
+
+##### Servidor de pruebas:
+https://tumueble-digital-g3.herokuapp.com/
