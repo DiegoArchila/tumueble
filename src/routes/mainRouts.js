@@ -14,7 +14,6 @@ router.get("/login", mainController.login);
 router.get("/user/create", mainController.showCreateUser);
 router.post(
   "/user/create",
-  validationsPasswords,
   validationsCreateUser,
   mainController.createUser
 );
