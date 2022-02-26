@@ -7,12 +7,13 @@
 html {
   font-size: 62.5%;
   font-family: var(--font-RedHatDispaly);
+  background-color: var(--color-bg);
 }
 
-body{
+body {
   /* background-color: var(--color-bg-body);
   min-height: 100vh;*/
-  
+
   flex-direction: column;
   width: 100%;
   display: flex;
@@ -38,7 +39,8 @@ a {
   display: inline-block;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
@@ -50,15 +52,19 @@ li {
   display: inline-block;
 }
 
-button{
+button {
   border-style: none;
   border-radius: 5px;
 }
 
-input[type="text"], input[type="file"], 
-input[type="number"], input[type="email"],
-input[type="date"],input[type="password"],
-textarea, select{
+input[type="text"],
+input[type="file"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+textarea,
+select {
   font-family: var(--font-RedHatDispaly);
   font-size: 15px;
   font-weight: normal;
@@ -73,38 +79,50 @@ textarea, select{
   resize: none;
 }
 
-input[type="text"]:hover, 
-input[type="number"]:hover, input[type="email"]:hover,
-input[type="date"]:hover,input[type="password"]:hover,
-textarea:hover, select:hover{
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+input[type="password"]:hover,
+textarea:hover,
+select:hover {
   box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
 }
 
-
-input[type="text"]:active, input[type="file"]:active, 
-input[type="number"]:active, input[type="email"]:active,
-input[type="date"]:active,input[type="password"]:active,
-textarea:active, select:active{
+input[type="text"]:active,
+input[type="file"]:active,
+input[type="number"]:active,
+input[type="email"]:active,
+input[type="date"]:active,
+input[type="password"]:active,
+textarea:active,
+select:active {
   border-color: var(--color-bg-btnOk);
 }
 
-input[type="text"],input[type="number"], 
-input[type="date"],input[type="email"],
-input[type="password"],textarea, select{
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
   border-width: 1px;
   border-style: solid;
 }
 
-input[type="file"]{
+input[type="file"] {
   margin-bottom: 5px;
   width: initial;
 }
 
-select{
+select {
   background-color: var(--color-bg-cards);
 }
 
-.product__inputText, .user__inputText, .login__inputText{
+.product__inputText,
+.user__inputText,
+.login__inputText {
   font-weight: bold;
   font-size: 15px;
   padding-left: 10px;
