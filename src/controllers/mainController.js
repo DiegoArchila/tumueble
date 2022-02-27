@@ -54,9 +54,12 @@ const login = async (req, res) => {
 
 const createUser = async (req, res) => {
   const validations = validationResult(req);
-  console.log(validations.errors);
+  const errors=validationResult(req).array();
+  console.log("errors.[0]",errors[0]);
+  console.log("Estos es lo que devuelve validations", validations.array.length);
 
-  if (validations.array.length > 0) {
+  if (errors[0]!=undefined) {
+    console.log("el tamaño de error dentro de errores es", validations.array.length, "El error es ", validations.mapped());
     return await res.render("createUser.ejs", {
       settingGeneral,
       index,
@@ -66,7 +69,7 @@ const createUser = async (req, res) => {
     });
   } else {
     res.redirect("/login");
-    console.log("errores de validatios:", validations.mapped);
+    console.log("No hay errores");
   }
 };
 

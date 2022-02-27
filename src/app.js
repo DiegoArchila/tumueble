@@ -2,12 +2,13 @@
 const express=require("express");
 const app=express();
 const indexRouter=require("./routes/mainRouts.js");
-const cartRouter=require('./routes/cartRouts.js');
+const cartRouter=require("./routes/cartRouts.js");
 const adminRouter=require('./routes/adminRouts.js');
 
 /* Settings */
 const PORT=process.env.PORT || 3003;
 app.use(express.static("public"));
+//app.use(bodyParser);
 
 /* Template Engine */
 app.set("view engine", "ejs");
