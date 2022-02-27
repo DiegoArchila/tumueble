@@ -51,11 +51,12 @@ li {
 .slider-container .slider li:target {
   opacity: 1;
   display: block;
+  transition: opacity 1s;
 }
 
 .slider-container .slider-menu {
   text-align: center;
-  margin: 20px;
+  margin: 5px;
 }
 
 .slider-container .slider-menu li {
