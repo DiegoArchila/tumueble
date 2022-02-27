@@ -29,3 +29,6 @@
 @import url("./partials/footer.css");
 
 /*---------------------------------------------------------------MEDIA QUERYS*/
+
+/*361-MAIN*/
+@import url("./partials/361/main.css");

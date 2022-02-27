@@ -508,16 +508,7 @@ input[class="login__input"] {
   align-items: center;
   flex-direction: column;
   padding: 0px 10px;
-}
-
-/*Media query tablets*/
-@media (min-width: 361px) {
-  .content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+  text-align: center;
 }
 
 /*Media query desktop*/

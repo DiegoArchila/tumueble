@@ -8,22 +8,32 @@
         <%- include('./partials/header.ejs')%>
 
         <!-- BANNER -->
-        <%- include('./partials/banner.ejs')%>
+        <%- include('./partials/banner.ejs')%>      
+
+        <!--MAIN-->
+        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
 
         <!--Slider-->
-        <div class="content">
+        <div class="content">          
           <div class="slider-container">
+            <div class="slider-title">
+              <h1>Productos mas vendidos</h1>
+            </div>
             <ul class="slider">
               <% for(let i=0; i<productsMasComprados.length; i++) { %>
               <li id="slide<%= i + 1 %>">
                 <div class="card">
                   <div class="card-image">
-                    <img                                            
-                      src="<%= productsMasComprados[i].images[0].path %> "
-                      height="300px"
-                      width="300px"
-                      alt="<%= productsMasComprados[i].name %> "
-                    />
+                    <% for( let image of productsMasComprados[i].images ) { %>
+                      <% if (image.isPrincipal == 1) { %>
+                        <img                                            
+                          src="<%= image.path %> "
+                          height="300px"
+                          width="300px"
+                          alt="<%= productsMasComprados[i].name %> "
+                        />
+                      <% } %>
+                    <% } %>                    
                   </div>
                   <div class="card-body">
                     <div class="grid">
@@ -71,9 +81,6 @@
           </div>
         </div>    
         <!--Slider-->
-
-        <!--MAIN-->
-        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
     
         <!--FOOTER-->
         <%- include('./partials/footer.ejs') %> 
