@@ -2,6 +2,7 @@ const dirDatabases = "../databases/";
 const settingGeneral = require("../databases/settingGeneralSite.json");
 const index = require("../databases/index.json");
 const products = require("../databases/business/products.json");
+const categories = require("../databases/business/productsCategories.json");
 /** Format the price to currency COP
  */
 const { toCOP } = require("../lib/formats.js");
@@ -38,12 +39,30 @@ const home = async (req, res) => {
     3 //Cantidad de sliders a mostrar
   );
 
+  let productsCategories = [];
+  let productsByCategorie = [];
+
+  categories.forEach((category) => {
+    productsByCategorie = functions.recortarTamanioDeUnArreglo(
+      [...products]
+        .filter((product) => product.category == category.name) //Filtro por categoria
+        .sort((a, b) => b.buyes - a.buyes), //Se organizan por mas vendidos
+      3 //Se recorta el array a 3
+    );
+    if (productsByCategorie.length > 0) {
+      productsCategories.push(productsByCategorie);
+    }
+    productsByCategorie = [];
+  });
+
   try {
     await res.render("index.ejs", {
       settingGeneral,
       index,
       productsMasComprados,
       productsOfertas,
+      productsCategories,
+      categories,
       toCOP,
     });
   } catch (error) {
