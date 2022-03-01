@@ -60,7 +60,9 @@
                           <div class="row">
                             <div class="column">
                               <div class="buttons">
-                                <button class="detalle">Ver detalle</button>
+                                <form action="/products/detail/<%= productsBycategorie[i].id %>" method="get">
+                                  <button class="detalle">Ver detalle</button>
+                                </form>
                                 <button class="agregar-carrito">
                                   Agregar al
                                   <span
@@ -125,7 +127,9 @@
                       <div class="row">
                         <div class="column">
                           <div class="buttons">
-                            <button class="detalle">Ver detalle</button>
+                            <form action="/products/detail/<%= productsMasComprados[i].id %>" method="get">
+                              <button type="submit" class="detalle">Ver detalle</button>
+                            </form>                            
                             <button class="agregar-carrito">
                               Agregar al
                               <span
@@ -196,7 +200,9 @@
                       <div class="row">
                         <div class="column">
                           <div class="buttons">
-                            <button class="detalle">Ver detalle</button>
+                            <form action="/products/detail/<%= productsOfertas[i].id %>" method="get">
+                              <button class="detalle">Ver detalle</button>
+                            </form>                            
                             <button class="agregar-carrito">
                               Agregar al
                               <span

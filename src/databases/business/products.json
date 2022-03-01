@@ -11,6 +11,12 @@
         "isPrincipal": 1,
         "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_plata.jpg",
         "description": "Descripccion de la imagen"
+      },
+      {
+        "id": 1,
+        "isPrincipal": 0,
+        "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_Plata_2.jpg",
+        "description": "Descripccion de la imagen"
       }
     ],
     "category": "Sofás",

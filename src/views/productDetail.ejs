@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+  <!--HEAD-->
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <!--HEADER-->
+    <%- include('./partials/header.ejs')%>
+
+    <!--Card product-->
+    <div class="content">
+      <div class="card">
+        <div class="slider-container">
+          <ul class="slider">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li id="image<%= i + 1 %>">
+              <div class="card-image">
+                <img
+                  src="<%= product.images[i].path %> "
+                  height="300px"
+                  width="300px"
+                  alt="<%= product.name %> "
+                />
+              </div>
+            </li>
+            <% } %>
+          </ul>
+          <ul class="slider-menu">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li><a href="#image<%= i + 1 %>"><%= i+1 %> </a></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div class="grid">
+            <div class="row">
+              <p class="title"><%= product.name %></p>
+            </div>
+            <div class="detail">
+              <% if (product.Description) { %>
+              <h1 class="detail-titulo">Descripción:</h1>
+              <p class="detail-content"><%= product.Description %></p>
+              <% } %> <% if (product.terminated) { %>
+              <h1 class="detail-titulo">Acabado:</h1>
+              <p class="detail-content"><%= product.terminated %></p>
+              <% } %> <% if (product.sku) { %>
+              <h1 class="detail-titulo">SKU:</h1>
+              <p class="detail-content"><%= product.sku %></p>
+              <% } %> <% if (product.category) { %>
+              <h1 class="detail-titulo">Categoria:</h1>
+              <p class="detail-content"><%= product.category %></p>
+              <% } %> <% if (product.stock) { %>
+              <h1 class="detail-titulo">Disponibles:</h1>
+              <p class="detail-content"><%= product.stock %></p>
+              <% } %>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="buttons">
+                  <button class="agregar-carrito">
+                    Agregar al
+                    <span class="iconify" data-icon="bytesize:cart"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="column">
+                <div class="cost">
+                  <p class="price">
+                    <%=
+                    toCOP.format(Math.round(product.priceFinal*(1-(((product.discount>0)?product.discount:0)/100))))
+                    %>
+                  </p>
+                  <% if (product.discount>0) { %>
+                  <p class="offer"><%= product.discount %> % OFF</p>
+                  <p class="price-normal">
+                    <%= toCOP.format(product.priceFinal) %>
+                  </p>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Card product-->
+
+    <!--FOOTER-->
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
