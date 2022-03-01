@@ -1,18 +1,10 @@
-const dirDatabases = "../databases/";
 const settingGeneral = require("../databases/settingGeneralSite.json");
 const index = require("../databases/index.json");
 const products = require("../databases/business/products.json");
+const { minibar } =require("../lib/complements.js");
+const { create } = require("../models/users.js");
 
-const { validationResult } = require("express-validator");
-const { redirect } = require("express/lib/response");
 
-/**MiniBanner
- * For more information see /wiews/partials/miniBanner.ejs
- */
-minibar = {
-  title: "Admin Principal",
-  icon: "eos-icons:admin-outlined",
-};
 
 const home = async (req, res) => {
   index.title = "home";
@@ -53,33 +45,23 @@ const login = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-  const validations = validationResult(req);
-  const errors=validationResult(req).array();
-  console.log("errors.[0]",errors[0]);
-  console.log("Estos es lo que devuelve validations", validations.array.length);
 
-  if (errors[0]!=undefined) {
-    console.log("el tamaño de error dentro de errores es", validations.array.length, "El error es ", validations.mapped());
-    return await res.render("createUser.ejs", {
+  try {
+    await create(req.body);
+    await res.render("login.ejs", {
       settingGeneral,
       index,
       minibar,
-      errors: validations.mapped(),
-      old: req.body,
     });
-  } else {
-    res.redirect("/login");
-    console.log("No hay errores");
+  } catch (error) {
+    throw error;
   }
+  
 };
 
 const showCreateUser = async (req, res) => {
   try {
-    await res.render("createUser.ejs", {
-      settingGeneral,
-      index,
-      minibar,
-    });
+    await res.redirect("/login");
   } catch (error) {
     throw error;
   }

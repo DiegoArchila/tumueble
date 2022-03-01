@@ -1,5 +1,10 @@
-const { body, check }=require("express-validator");
-const { createUser }= require("../controllers/mainController.js")
+/*IMPORTS*/
+const { check }=require("express-validator");
+const { findByEmail } =require("../models/users.js")
+const settingGeneral = require("../databases/settingGeneralSite.json");
+const index = require("../databases/index.json");
+const { minibar } =require("../lib/complements.js");
+const { validationResult } = require("express-validator");
 
 const validationsCreateUser=[
     check("firstName")
@@ -23,8 +28,15 @@ const validationsCreateUser=[
         .notEmpty().withMessage("Debes seleccionar un genero en \"Genero\" "),
         
     check("email")
-        .isEmail().withMessage("Debes ingresar un email valido en \"Email\" "),
-
+        .isEmail().withMessage("Debes ingresar un email valido en \"Email\" ")
+        .custom(val => {
+            console.log(val);
+            if (!findByEmail(val)){
+                return true;
+            } else {
+                throw new Error("El email \'"+val+"\' ya se encuentra en uso");
+            }
+        }),
     check("country")
         .notEmpty().withMessage("Debes completar el campo \"País\" ")
         .isLength({
@@ -64,17 +76,34 @@ const validationsCreateUser=[
             minNumbers:2
         }).withMessage("Se debe ingresar minimo: 10 caracteres, 1 letra mayuscula, 2 números. En el campo \"Contraseña\"."),
     check("passwordTry").custom((value, {req}) =>{
-            console.log("Datos Fuera del IF", value, "==", req.body.password);
             if (value === req.body.password){
-                console.log("Datos", value, "==", req.body.password, "Contraseña Correcta");
                 return true;
             } else {
-                console.log("Datos", value, "==", req.body.password, "Contraseña Incorrecta");
                 throw new Error("Las contraseñas en los campos de Contraseña deben coincidir");
             }    
         }) 
 ];
 
+const validateErrorscreateUser = async (req, res, next) => {
+
+    const validations = validationResult(req);
+    const errors=validationResult(req).array();
+  
+    if (errors[0]!=undefined) {
+  
+      return await res.render("createUser.ejs", {
+        settingGeneral,
+        index,
+        minibar,
+        errors: validations.mapped(),
+        old: req.body,
+      });
+    } else {
+        next();
+    }
+  };
+
 module.exports={
-    validationsCreateUser
+    validationsCreateUser,
+    validateErrorscreateUser,
 }

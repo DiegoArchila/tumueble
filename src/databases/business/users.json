@@ -1,31 +1,15 @@
 [
-    {
-        "id":0,
-        "idDni": 1082928069,
-        "firstName": "Diego Alonso",
-        "lastName": "Archila Torres",
-        "dateBorn": "16/01/1991",
-        "gender": "Hombre",
-        "email":"",
-        "phone":[
-            {
-                "id":"",
-                "type":"",
-                "number":0
-            }
-        ],
-        "pwd":"",
-        "location":[
-            {   
-                "id":0,
-                "country": "Colombia",
-                "province-state": "Antioquia",
-                "city-town": "Rionegro",
-                "address": "Cll 52 # 61-337, la falda del palo",
-            }
-        ],        
-        "imagen": "",
-        "isAdmin": true
-
-    }
+ {
+  "firstName": "Carioca",
+  "lastName": "Archila",
+  "dateBorn": "2022-03-11",
+  "gender": "1",
+  "email": "caracols@gmail.com",
+  "country": "Colombia",
+  "province_state": "Antioquia",
+  "city_town": "Rionegro",
+  "address": "Calle 52 # 61-337, Falda del Palo",
+  "password": "$2b$12$BGVPz63hlM/HQWQNMFkS0u4ClJjcwybmT35SXEpfImArWRsjZyIRO",
+  "id": 10
+ }
 ]
