@@ -9,16 +9,26 @@
     <!--Card product-->
     <div class="content">
       <div class="card">
-        <div class="card-image">
-          <% if (product.images) { %> <% for( let image of product.images ) { %>
-          <% if (image.isPrincipal == 1) { %>
-          <img
-            src="<%= image.path %> "
-            height="300px"
-            width="300px"
-            alt="<%= product.name %> "
-          />
-          <% } %> <% } %> <% } %>
+        <div class="slider-container">
+          <ul class="slider">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li id="image<%= i + 1 %>">
+              <div class="card-image">
+                <img
+                  src="<%= product.images[i].path %> "
+                  height="300px"
+                  width="300px"
+                  alt="<%= product.name %> "
+                />
+              </div>
+            </li>
+            <% } %>
+          </ul>
+          <ul class="slider-menu">
+            <% for( let i = 0; i < product.images.length; i++ ) { %>
+            <li><a href="#image<%= i + 1 %>"><%= i+1 %> </a></li>
+            <% } %>
+          </ul>
         </div>
         <div class="card-body">
           <div class="grid">
