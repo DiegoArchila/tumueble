@@ -75,21 +75,21 @@ const login = async (req, res) => {
 const createUser = async (req, res) => {
 
   try {
-    await create(req.body);
-    await res.render("login.ejs", {
-      settingGeneral,
-      index,
-      minibar,
-    });
+    create(req.body);
+    res.redirect("/login");
   } catch (error) {
     throw error;
   }
-  
+
 };
 
 const showCreateUser = async (req, res) => {
   try {
-    await res.redirect("/login");
+    await res.render("createUser.ejs", {
+      settingGeneral,
+      index,
+      minibar,
+    });
   } catch (error) {
     throw error;
   }

@@ -32,15 +32,22 @@ const findByField = (field, text) =>{
 }
 
 const getNewId=()=>{
+    
     let allsUsers=getAlls();
     let lastID = allsUsers.pop();
-    return (lastID.id + 1); 
+    let index=0
+
+    if (lastID!=undefined) {
+        index=(lastID.id + 1)  
+    } else {
+        index;
+    }
+
+    return index; 
 }
 
 const update = (user)=>{
 
-    
-    
     let allsUsers=getAlls();
     allsUsers[user.id]=user;
 
@@ -60,22 +67,31 @@ const update = (user)=>{
  * @returns true if of user is created, or a object error in case negative.
  */
 const create = (user)=>{
-    let allsUsers=getAlls();
-    
-    user.id=getNewId();
-    user.password=encrypt(user.password);
-    
-    allsUsers.push(user);
+    try {
 
-    createJSON(allsUsers,users);
+        let allsUsers=getAlls();
+    
+        user.id=getNewId();
+        user.password=encrypt(user.password);
+        user.passwordTry="";
 
-    user=findByPk(getNewId()-1);
-    if (user!=undefined) {
-        console.log("Se ha creado el usuario", user.email, "sastifactoriamente!");
-        return true;
-    } else {
-        throw new Error("Ha ocurrido un error al crear el usuario");
+        allsUsers.push(user);
+
+        createJSON(allsUsers,users);
+
+        user=findByPk(getNewId()-1);
+        
+        if (user!=undefined) {
+            console.log("Se ha creado el usuario", user.email, "sastifactoriamente!");
+            return true;
+        } else {
+            throw new Error("Ha ocurrido un error al crear el usuario");
+        }
+
+    } catch (error) {
+        throw error;
     }
+    
 }
 
 module.exports= {
