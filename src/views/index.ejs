@@ -8,22 +8,116 @@
         <%- include('./partials/header.ejs')%>
 
         <!-- BANNER -->
-        <%- include('./partials/banner.ejs')%>
+        <%- include('./partials/banner.ejs')%>      
 
-        <!--Slider-->
-        <div class="content">
+        <!--MAIN-->
+        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
+
+        <!--Menu de categorias-->
+        <nav class="menu-desplegable">
+          <div class="menu-title">
+            <h1>Categorias</h1>
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="#lista-menu">Seleccione una categoria</a>
+            </li>
+            <ul class="lista-menu" id="lista-menu">            
+              <% for( let categorie of categories ) { %>
+                <li>
+                  <a href="#products-<%= categorie.name %>">
+                    <%= categorie.name %>
+                  </a>
+                </li>
+              <% } %>            
+            </ul>
+          </ul>          
+          <div class="contenido">
+            <% for( let productsBycategorie of productsCategories ) { %>
+              <div class="product" id="products-<%= productsBycategorie[0].category %>">
+                <div class="content">          
+                  <% for( let i = 0; i < productsBycategorie.length; i++ ) { %>
+                    <div class="card">
+                      <div class="card-image">
+                        <% if (productsBycategorie[i].images) { %>
+                          <% for( let image of productsBycategorie[i].images ) { %>
+                            <% if (image.isPrincipal == 1) { %>
+                              <img                                            
+                                src="<%= image.path %> "
+                                height="300px"
+                                width="300px"
+                                alt="<%= productsBycategorie[i].name %> "
+                              />
+                            <% } %>
+                          <% } %>                    
+                        <% } %>                    
+                      </div>
+                      <div class="card-body">
+                        <div class="grid">
+                          <div class="row">
+                            <p class="title"><%= productsBycategorie[i].name %></p>
+                          </div>
+                          <div class="row">
+                            <div class="column">
+                              <div class="buttons">
+                                <form action="/products/detail/<%= productsBycategorie[i].id %>" method="get">
+                                  <button class="detalle">Ver detalle</button>
+                                </form>
+                                <button class="agregar-carrito">
+                                  Agregar al
+                                  <span
+                                    class="iconify"
+                                    data-icon="bytesize:cart"
+                                  ></span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="column">
+                              <div class="cost">
+                                <p class="price">
+                                  <%=
+                                  toCOP.format(Math.round(productsBycategorie[i].priceFinal*(1-(((productsBycategorie[i].discount>0)?productsBycategorie[i].discount:0)/100))))
+                                  %>
+                                </p>
+                                <% if (productsBycategorie[i].discount>0) { %>
+                                <p class="offer"><%= productsBycategorie[i].discount %> % OFF</p>
+                                <p class="price-normal"><%= toCOP.format(productsBycategorie[i].priceFinal) %></p>
+                                <% } %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% } %>
+                </div>                  
+              </div>                        
+            <% } %>
+          </div>  
+        </nav>        
+        <!--Menu de categorias-->
+
+        <!--Slider productos mas vendidos-->
+        <div class="content">          
           <div class="slider-container">
+            <div class="slider-title">
+              <h1>Productos mas vendidos</h1>
+            </div>
             <ul class="slider">
               <% for(let i=0; i<productsMasComprados.length; i++) { %>
-              <li id="slide<%= i + 1 %>">
+              <li id="slideProductsMasComprados<%= i + 1 %>">
                 <div class="card">
                   <div class="card-image">
-                    <img                                            
-                      src="<%= productsMasComprados[i].images[0].path %> "
-                      height="300px"
-                      width="300px"
-                      alt="<%= productsMasComprados[i].name %> "
-                    />
+                    <% for( let image of productsMasComprados[i].images ) { %>
+                      <% if (image.isPrincipal == 1) { %>
+                        <img                                            
+                          src="<%= image.path %> "
+                          height="300px"
+                          width="300px"
+                          alt="<%= productsMasComprados[i].name %> "
+                        />
+                      <% } %>
+                    <% } %>                    
                   </div>
                   <div class="card-body">
                     <div class="grid">
@@ -33,7 +127,9 @@
                       <div class="row">
                         <div class="column">
                           <div class="buttons">
-                            <button class="detalle">Ver detalle</button>
+                            <form action="/products/detail/<%= productsMasComprados[i].id %>" method="get">
+                              <button type="submit" class="detalle">Ver detalle</button>
+                            </form>                            
                             <button class="agregar-carrito">
                               Agregar al
                               <span
@@ -46,13 +142,13 @@
                         <div class="column">
                           <div class="cost">
                             <p class="price">
-                              $<%=
-                              Math.round(productsMasComprados[i].priceFinal*(1-(((productsMasComprados[i].discount>0)?productsMasComprados[i].discount:0)/100)))
+                              <%=
+                              toCOP.format(Math.round(productsMasComprados[i].priceFinal*(1-(((productsMasComprados[i].discount>0)?productsMasComprados[i].discount:0)/100))))
                               %>
                             </p>
                             <% if (productsMasComprados[i].discount>0) { %>
                             <p class="offer"><%= productsMasComprados[i].discount %> % OFF</p>
-                            <p class="price-normal">$<%= productsMasComprados[i].priceFinal %></p>
+                            <p class="price-normal"><%= toCOP.format(productsMasComprados[i].priceFinal) %></p>
                             <% } %>
                           </div>
                         </div>
@@ -65,15 +161,85 @@
             </ul>
             <ul class="slider-menu">
               <% for( let i = 0; i < productsMasComprados.length; i++ ) { %>
-              <li><a href="#slide<%= i + 1 %>"><%= i+1 %> </a></li>
+              <li><a href="#slideProductsMasComprados<%= i + 1 %>"><%= i+1 %> </a></li>
               <% } %>
             </ul>
           </div>
         </div>    
-        <!--Slider-->
+        <!--Slider productos mas vendidos-->
 
-        <!--MAIN-->
-        <h1>Bienvenido a <%- index.name.toUpperCase() %></h1>
+        <!--Slider productos con ofertas-->
+        <div class="content">          
+          <div class="slider-container">
+            <div class="slider-title">
+              <h1>Descubre nuestras ofertas</h1>
+            </div>
+            <ul class="slider">
+              <% for(let i=0; i<productsOfertas.length; i++) { %>
+              <li id="slideProductsOfertas<%= i + 1 %>">
+                <div class="card">
+                  <div class="card-image">
+                    <% if (productsOfertas[i].images) { %>
+                      <% for( let image of productsOfertas[i].images ) { %>
+                        <% if (image.isPrincipal == 1) { %>
+                          <img                                            
+                            src="<%= image.path %> "
+                            height="300px"
+                            width="300px"
+                            alt="<%= productsOfertas[i].name %> "
+                          />
+                        <% } %>
+                      <% } %>                    
+                    <% } %>                    
+                  </div>
+                  <div class="card-body">
+                    <div class="grid">
+                      <div class="row">
+                        <p class="title"><%= productsOfertas[i].name %></p>
+                      </div>
+                      <div class="row">
+                        <div class="column">
+                          <div class="buttons">
+                            <form action="/products/detail/<%= productsOfertas[i].id %>" method="get">
+                              <button class="detalle">Ver detalle</button>
+                            </form>                            
+                            <button class="agregar-carrito">
+                              Agregar al
+                              <span
+                                class="iconify"
+                                data-icon="bytesize:cart"
+                              ></span>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="cost">
+                            <p class="price">
+                              <%=
+                              toCOP.format(Math.round(productsOfertas[i].priceFinal*(1-(((productsOfertas[i].discount>0)?productsOfertas[i].discount:0)/100))))
+                              %>
+                            </p>
+                            <% if (productsOfertas[i].discount>0) { %>
+                            <p class="offer"><%= productsOfertas[i].discount %> % OFF</p>
+                            <p class="price-normal"><%= toCOP.format(productsOfertas[i].priceFinal) %></p>
+                            <% } %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <% } %>
+            </ul>
+            <ul class="slider-menu">
+              <% for( let i = 0; i < productsOfertas.length; i++ ) { %>
+              <li><a href="#slideProductsOfertas<%= i + 1 %>"><%= i+1 %> </a></li>
+              <% } %>
+            </ul>
+          </div>
+        </div>    
+        <!--Slider productos con ofertas-->                
     
         <!--FOOTER-->
         <%- include('./partials/footer.ejs') %> 

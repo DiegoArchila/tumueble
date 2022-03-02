@@ -11,6 +11,12 @@
         "isPrincipal": 1,
         "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_plata.jpg",
         "description": "Descripccion de la imagen"
+      },
+      {
+        "id": 1,
+        "isPrincipal": 0,
+        "path": "/img/store/products/sofas/Sofa_2P_Chester_Gris_Plata_2.jpg",
+        "description": "Descripccion de la imagen"
       }
     ],
     "category": "Sofás",
@@ -47,7 +53,7 @@
     },
     "priceGross": 4199990,
     "priceFinal": 5215000,
-    "discount": 38
+    "discount": 40
   },
   {
     "id": 3,
@@ -72,7 +78,7 @@
     },
     "priceGross": 4199990,
     "priceFinal": 5215000,
-    "discount": 38
+    "discount": 20
   },
   {
     "id": 4,
@@ -97,7 +103,7 @@
     },
     "priceGross": 4199990,
     "priceFinal": 5215000,
-    "discount": 38
+    "discount": 0
   },
   {
     "id": 5,
@@ -109,7 +115,7 @@
       {
         "id": 0,
         "isPrincipal": 1,
-        "path": "",
+        "path": "/img/store/products/sofas/Sofa_Cama_Click_Clack_Sally_Gris.jpg",
         "description": "Descripccion de la imagen"
       }
     ],
@@ -122,6 +128,6 @@
     },
     "priceGross": 4199990,
     "priceFinal": 5215000,
-    "discount": 38
+    "discount": 10
   }
 ]
