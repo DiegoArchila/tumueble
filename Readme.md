@@ -28,4 +28,4 @@ Las vistas son solo en mobile hasta el momento.
 
 
 ##### Servidor de pruebas:
-https://tumueble-digital-g3.herokuapp.com/
+http://diarchila-tumueble.herokuapp.com/
