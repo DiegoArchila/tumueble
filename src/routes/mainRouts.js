@@ -1,14 +1,18 @@
 /* Imports */
 const express = require("express");
 const router = express.Router();
-const { validationsCreateUser, validateErrorscreateUser} = require("../middleWares/formsMiddleWares.js");
+const {validationsCreateUser, validateErrorscreateUser,
+  validationLogin, validationLoginUser} = require("../middleWares/formsMiddleWares.js");
 
 const mainController = require("../controllers/mainController.js");
 
 router.get("/", mainController.home);
+
 router.get("/login", mainController.login);
+router.post("/login",validationLogin,validationLoginUser, mainController.validateUser);
 
 router.get("/user/create", mainController.showCreateUser);
-router.post("/user/create", validationsCreateUser, validateErrorscreateUser ,mainController.createUser);
+router.post("/user/create", validationsCreateUser,
+   validateErrorscreateUser ,mainController.createUser);
 
 module.exports = router;

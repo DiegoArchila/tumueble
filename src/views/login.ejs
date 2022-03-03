@@ -21,8 +21,11 @@
 
         <!--MAIN-->
         <main class="login__main flx-ctr">
+
             <article class="login__container">
-                <form class="login" method="POST" action="/login/validate">
+                <!--ERRORS-->
+            <%- include("./partials/errors.ejs")%> 
+                <form class="login" method="POST" action="/login">
                     <!--email-->
                     <label class="login__inputText" for="email">
                         Email

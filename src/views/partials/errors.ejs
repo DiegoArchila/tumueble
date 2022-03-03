@@ -1,0 +1,14 @@
+<!--
+    Objects needs for operate
+        -errors
+-->
+<% if (locals.errors) {%>
+                
+    <section class="errors__container" role="alert">
+    <% for(let error in errors) {%> 
+        <p class="errors__text">
+           - <%= errors[error].msg  %>
+        </p>
+    <% } %>
+    </section>
+<%}%>

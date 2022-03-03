@@ -22,16 +22,8 @@
         <!--MAIN-->
         <main>
             
-            <% if (locals.errors) {%>
-                
-                <section class="errors__container" role="alert">
-                <% for(let error in errors) {%> 
-                    <p class="errors__text">
-                       - <%= errors[error].msg  %>
-                    </p>
-                <% } %>
-                </section>
-            <%}%>     
+            <!--ERRORS-->
+            <%- include("./partials/errors.ejs")%>     
                         
             <section class="user">
                 <!-- <nav class="user__bar flx-ctr">

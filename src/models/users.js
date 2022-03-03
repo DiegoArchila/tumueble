@@ -1,6 +1,6 @@
 /*IMPORTS*/
 const users = "../databases/business/users.json";
-const { toObject, createJSON, encrypt } = require("../lib/formats.js");
+const { toObject, createJSON, encrypt, comparePassword } = require("../lib/formats.js");
 
 
 /*FUNCTIONS*/
@@ -19,16 +19,24 @@ const findByPk = (id) =>{
 }
 
 const findByEmail = (email) =>{
-    console.log("Email", email);
     let allsUsers=getAlls();
     let user=allsUsers.find(u=>u.email===email);
     return (user!=undefined) ? true:false;
 }
 
+/**
+ * Search a user by field
+ * @param {*} field field or property of user
+ * @param {*} text text from field to compare
+ * @returns object user 
+ */
 const findByField = (field, text) =>{
-    let allsUsers=getAlls();
-    let userField=allsUsers.find(u=>u[field]===text);
-    return userField;
+  
+        let allsUsers=getAlls();
+        let userField=allsUsers.find(u=>u[field]===text);
+
+        return userField;   
+
 }
 
 const getNewId=()=>{
@@ -39,14 +47,18 @@ const getNewId=()=>{
 
     if (lastID!=undefined) {
         index=(lastID.id + 1)  
-    } else {
-        index;
     }
 
     return index; 
 }
 
-const update = (user)=>{
+
+/**
+ * Validated if the user is admin
+ * @param {Object} user Object user expected
+ * @returns true if the user is admin, or a object error in case negative. 
+ */
+const update = async (user)=>{
 
     let allsUsers=getAlls();
     allsUsers[user.id]=user;
@@ -59,6 +71,24 @@ const update = (user)=>{
     } else {
         throw new Error("No se ha podido modificar el usuario", user.email)
     }    
+}
+
+/**
+ * Validated if the user is admin
+ * @param {Object} user Object user expected
+ * @returns true if the user is admin, or a object error in case negative. 
+ */
+const isAdmin= async(id) => {
+    try {
+        let user=findByPk(id); 
+        if(user=undefined && user.isAdmin!=undefined && user.isAdmin===true){
+            return true;
+        } else{
+            return false;
+        }
+    } catch (error) {
+        throw error;
+    }
 }
 
 /**
@@ -94,11 +124,36 @@ const create = (user)=>{
     
 }
 
+
+/**
+ * Validate if the password is great.
+ * First validate the email, before the password
+ * @param {*} inputEmail identifiquer of the user 
+ * @param {*} password password ingresed
+ */
+const validateUser = (inputEmail, password) =>{
+
+    console.log("Function ValidateUser at Users.js", inputEmail,", PWD", password);
+
+    let user=findByField("email",inputEmail);
+    console.log("Usuario por field email:", user);
+
+    if(user!=undefined &&
+        (user.email===inputEmail && 
+        comparePassword(password, user.password))){
+            return true;
+    } else{
+            return false;
+    }
+}
+
 module.exports= {
     getAlls,
     findByEmail,
     findByPk,
     findByField,
     update,
-    create    
+    create,
+    isAdmin,
+    validateUser    
 }

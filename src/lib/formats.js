@@ -19,7 +19,6 @@ const toCOP= new Intl.NumberFormat("es-CO", {
  * @returns A Object at format Object
  */
 const toObject = (json) =>{
-    console.log("ToObject", json, "\n ruta actual:", path.resolve(__dirname,json));
     return JSON.parse( fs.readFileSync(path.resolve(__dirname,json), "utf-8") );
 }
 

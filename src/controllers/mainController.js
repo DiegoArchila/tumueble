@@ -72,7 +72,7 @@ const login = async (req, res) => {
   }
 };
 
-const createUser = async (req, res) => {
+const createUser = (req, res) => {
 
   try {
     create(req.body);
@@ -85,7 +85,7 @@ const createUser = async (req, res) => {
 
 const showCreateUser = async (req, res) => {
   try {
-    await res.render("createUser.ejs", {
+      res.render("createUser.ejs", {
       settingGeneral,
       index,
       minibar,
@@ -95,9 +95,16 @@ const showCreateUser = async (req, res) => {
   }
 };
 
+const validateUser= async(req,res)=>{
+  console.log("Funciono!!!..");
+  return res.redirect("/")
+
+}
+
 module.exports = {
   home,
   login,
   showCreateUser,
   createUser,
+  validateUser
 };

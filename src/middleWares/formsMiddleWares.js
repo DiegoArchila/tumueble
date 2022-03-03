@@ -1,6 +1,6 @@
 /*IMPORTS*/
-const { check }=require("express-validator");
-const { findByEmail } =require("../models/users.js")
+const { check, body }=require("express-validator");
+const { findByEmail, validateUser } =require("../models/users.js")
 const settingGeneral = require("../databases/settingGeneralSite.json");
 const index = require("../databases/index.json");
 const { minibar } =require("../lib/complements.js");
@@ -30,7 +30,6 @@ const validationsCreateUser=[
     check("email")
         .isEmail().withMessage("Debes ingresar un email valido en \"Email\" ")
         .custom(val => {
-            console.log(val);
             if (!findByEmail(val)){
                 return true;
             } else {
@@ -101,9 +100,55 @@ const validateErrorscreateUser = async (req, res, next) => {
     } else {
         next();
     }
-  };
+};
+
+/**
+ * Validation of the user for login
+ */
+const validationLogin= [
+    check("email")
+    .custom(function(emailInput,{req}){
+        let resultado=validateUser(emailInput, req.body.password);
+        console.log("email custom:",emailInput);
+        console.log("req.body:",req.body);
+        console.log("ResultadoValidacionIF dentro de ValidationLogin", resultado);
+        if (validateUser(emailInput, req.body.password)) {
+            return true;
+        } else {
+            throw new Error("El email o password es invalido, intente nuevamente!");
+        }
+    })
+];
+
+/**
+ * Validate if found errors in the chain validations
+ * @param {*} req request http
+ * @param {*} res  response http
+ * @param {*} next  next middleware
+ * @returns a view login with errors, if exist
+ */
+const validationLoginUser=async(req,res,next)=>{
+    const validations = validationResult(req);
+    const errors=validationResult(req).array();
+
+    console.log("errores:", errors);
+  
+    if (errors[0]!=undefined) {
+  
+      return await res.render("login.ejs", {
+        settingGeneral,
+        index,
+        minibar,
+        errors: validations.mapped()
+      });
+    } else {
+        next();
+    }
+}
 
 module.exports={
     validationsCreateUser,
     validateErrorscreateUser,
+    validationLoginUser,
+    validationLogin
 }
