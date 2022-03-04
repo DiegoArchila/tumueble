@@ -50,12 +50,23 @@ const minibar={
 };
 
 module.exports= {
-    cart: (req,res)=> res.render("cart.ejs", {
-        index,
-        settingGeneral,
-        cart,
-        toCOP,
-        totalOrder,
-        minibar
-    })
+    cart: async (req,res)=> {
+        try {
+            if(req.session.user!=undefined){
+                await res.render("cart.ejs", {
+                    index,
+                    settingGeneral,
+                    cart,
+                    toCOP,
+                    totalOrder,
+                    minibar,
+                    user:req.session.user
+                });
+            } else {
+                await res.redirect("/login")
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
 };

@@ -108,10 +108,6 @@ const validateErrorscreateUser = async (req, res, next) => {
 const validationLogin= [
     check("email")
     .custom(function(emailInput,{req}){
-        let resultado=validateUser(emailInput, req.body.password);
-        console.log("email custom:",emailInput);
-        console.log("req.body:",req.body);
-        console.log("ResultadoValidacionIF dentro de ValidationLogin", resultado);
         if (validateUser(emailInput, req.body.password)) {
             return true;
         } else {

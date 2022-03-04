@@ -1,3 +1,7 @@
+<!--
+    Objects needs for works
+    user
+-->
 <header>
     <nav class="menuBar">
         <ul class="menuBar__optionSite flx-ctr">
@@ -13,6 +17,15 @@
             </li>
         </ul>
         <ul class="menuBar__optionUser flx-ctr">
+
+            <% if(locals.user) {%> 
+            <!-- Section User -->
+            <li>
+                <a href=<%= (locals.admin && admin==true) ? "/admin/dashboard" : "/user/dashboard" %> class="">
+                    <i class="iconify menuBar__optionUserIcon" data-icon="ant-design:user-outlined"></i>
+                </a>
+            </li>
+            <% } %> 
 
             <!-- Section Searching -->
             <li>
@@ -31,7 +44,8 @@
             <!-- Section Login -->
             <li>
                 <a href="/login" class="">
-                    <i class="iconify menuBar__optionUserIcon" data-icon="ri:login-circle-line"></i>
+                    <i class="iconify menuBar__optionUserIcon" data-icon=<%= (locals.user) ?  "ant-design:logout-outlined":
+                    "ri:login-circle-line" %>></i>
                 </a>
             </li>
         </ul>                

@@ -1,3 +1,6 @@
+const settingGeneral = require("../databases/settingGeneralSite.json");
+const index = require("../databases/index.json");
+
 /**MiniBanner
  * For more information see /wiews/partials/miniBanner.ejs
  */
@@ -7,5 +10,7 @@
   };
 
   module.exports={
-      minibar
+      minibar,
+      settingGeneral,
+      index
   }

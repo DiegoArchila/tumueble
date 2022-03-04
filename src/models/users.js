@@ -18,6 +18,11 @@ const findByPk = (id) =>{
     return user;
 }
 
+/**
+ * function for verifiqued if a user is registred, this for email
+ * @param {*} email 
+ * @returns true if the email is found or false if do is not
+ */
 const findByEmail = (email) =>{
     let allsUsers=getAlls();
     let user=allsUsers.find(u=>u.email===email);
@@ -66,7 +71,6 @@ const update = async (user)=>{
     createJSON(allsUsers,users);
 
     if(user==allsUsers[user.id]) {
-        console.log("El usuario ", allsUsers[user.id].email, "se ha modificado")
         return true;
     } else {
         throw new Error("No se ha podido modificar el usuario", user.email)
@@ -112,7 +116,6 @@ const create = (user)=>{
         user=findByPk(getNewId()-1);
         
         if (user!=undefined) {
-            console.log("Se ha creado el usuario", user.email, "sastifactoriamente!");
             return true;
         } else {
             throw new Error("Ha ocurrido un error al crear el usuario");
@@ -133,10 +136,7 @@ const create = (user)=>{
  */
 const validateUser = (inputEmail, password) =>{
 
-    console.log("Function ValidateUser at Users.js", inputEmail,", PWD", password);
-
     let user=findByField("email",inputEmail);
-    console.log("Usuario por field email:", user);
 
     if(user!=undefined &&
         (user.email===inputEmail && 
@@ -144,6 +144,22 @@ const validateUser = (inputEmail, password) =>{
             return true;
     } else{
             return false;
+    }
+};
+
+
+/**
+ * search a user by email
+ * @param {*} email email of the user
+ * @returns Object user, if is found
+ */
+const getUserByEmail=async(email)=>{
+    try {
+        let allsUsers=getAlls();
+        let user=allsUsers.find(u=>u.email===email);
+        return user;
+    } catch (error) {
+        throw error;
     }
 }
 
@@ -155,5 +171,6 @@ module.exports= {
     update,
     create,
     isAdmin,
-    validateUser    
+    validateUser,
+    getUserByEmail    
 }

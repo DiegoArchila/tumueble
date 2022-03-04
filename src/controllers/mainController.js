@@ -1,59 +1,25 @@
-const settingGeneral = require("../databases/settingGeneralSite.json");
-const index = require("../databases/index.json");
+
 const products = require("../databases/business/products.json");
-const { minibar } =require("../lib/complements.js");
-const { create } = require("../models/users.js");
-const categories = require("../databases/business/productsCategories.json");
+const { minibar, index, settingGeneral } =require("../lib/complements.js");
+const { create, getUserByEmail } = require("../models/users.js");
 const { toCOP } = require("../lib/formats.js");
 
-
-const functions = require("../lib/functions.js");
-
 const home = async (req, res) => {
-  index.title = "home";
-
-  let productsMasComprados = functions.recortarTamanioDeUnArreglo(
-    [...products].sort((a, b) => b.buyes - a.buyes), //Se ordenan por productos mas comprados
-    3 //Cantidad de sliders a mostrar
-  );
-
-  let productsOfertas = functions.recortarTamanioDeUnArreglo(
-    [...products]
-      .map((product) => {
-        if (product.discount > 0) {
-          return product;
-        }
-      })
-      .sort((a, b) => b.discount - a.discount), //Productos con ofertas de mayor a menor
-    3 //Cantidad de sliders a mostrar
-  );
-
-  let productsCategories = [];
-  let productsByCategorie = [];
-
-  categories.forEach((category) => {
-    productsByCategorie = functions.recortarTamanioDeUnArreglo(
-      [...products]
-        .filter((product) => product.category == category.name) //Filtro por categoria
-        .sort((a, b) => b.buyes - a.buyes), //Se organizan por mas vendidos
-      3 //Se recorta el array a 3
-    );
-    if (productsByCategorie.length > 0) {
-      productsCategories.push(productsByCategorie);
-    }
-    productsByCategorie = [];
-  });
-
   try {
-    await res.render("index.ejs", {
-      settingGeneral,
-      index,
-      productsMasComprados,
-      productsOfertas,
-      productsCategories,
-      categories,
-      toCOP,
-    });
+    if(req.session.user!=undefined){
+      await res.render("index.ejs", {
+        settingGeneral,
+        index,
+        toCOP,
+        user:req.session.user
+      });
+    } else {
+      await res.render("index.ejs", {
+        settingGeneral,
+        index,
+        toCOP
+      });
+    }
   } catch (error) {
     throw error;
   }
@@ -61,22 +27,35 @@ const home = async (req, res) => {
 
 const login = async (req, res) => {
   index.title = "login";
+
   try {
-    await res.render("login.ejs", {
-      settingGeneral,
-      index,
-      minibar,
-    });
+    console.log("req.session.user :",req.session.user);
+    console.log("req.session.admin :",req.session.admin);
+    if(req.session.user!=undefined){
+      return await res.render("index.ejs", {
+        settingGeneral,
+        index,
+        minibar,
+        user:req.session.user,
+        admin:req.session.admin
+      });
+    }else {
+      await res.render("login.ejs", {
+        settingGeneral,
+        index,
+        minibar
+      });
+    }
   } catch (error) {
     throw error;
   }
 };
 
-const createUser = (req, res) => {
+const createUser = async(req, res) => {
 
   try {
     create(req.body);
-    res.redirect("/login");
+    await res.redirect("/login");
   } catch (error) {
     throw error;
   }
@@ -85,19 +64,41 @@ const createUser = (req, res) => {
 
 const showCreateUser = async (req, res) => {
   try {
+    if(req.session.user!=undefined){
+      await res.render("index.ejs", {
+        settingGeneral,
+        index,
+        minibar,
+        user:req.session.user
+      });
+    } else {
       res.render("createUser.ejs", {
-      settingGeneral,
-      index,
-      minibar,
-    });
+        settingGeneral,
+        index,
+        minibar,
+      });
+    }  
   } catch (error) {
     throw error;
   }
 };
 
 const validateUser= async(req,res)=>{
-  console.log("Funciono!!!..");
-  return res.redirect("/")
+
+  try {
+    let user= await getUserByEmail(req.body.email);
+    req.session.user=user.id;
+
+    if(user.isAdmin){
+      req.session.admin=true;
+    }
+
+  } catch (error) {
+    throw error;
+  
+  } finally {
+    res.redirect("/");
+  }
 
 }
 
