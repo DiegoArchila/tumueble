@@ -5,6 +5,13 @@ Proyecto para Digital House.
 Se aplica la metodología mobile first.
 Las vistas son solo en mobile hasta el momento.
 
+### Info para testeo
+Se pueden crear usuarios.
+
+perfil de admin para login:
+- Email = admin@tumueble.com
+- password = Admin.12345
+
 ###### Herramientas usadas hasta el momento:
 - HTML
 - CSS (BEM)
@@ -19,13 +26,15 @@ Las vistas son solo en mobile hasta el momento.
 ###### Vistas funcionales
 - /
 - /login
+- /logout(get) No hay vista, solo cierra sesion en caso que estes logueado, si no lo estas te redirecciona a /
 - /user/create
-- /admin
+- /user/dashboard
+- /user
+- /admin/dashboard
 - /admin/products
 - /admin/products/create
-
-###### servidor de pruebas
-
+- /admin/components
+- /admin/user
 
 ##### Servidor de pruebas:
 http://diarchila-tumueble.herokuapp.com/
