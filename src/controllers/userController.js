@@ -1,8 +1,7 @@
 const { minibar, index, settingGeneral } =require("../lib/complements.js");
 const userOrders=require("../databases/business/usersOrders.json");
 const { toCOP } = require("../lib/formats.js");
-const { user } = require("./adminController.js");
-
+const { findByPk } = require("../models/users.js");
 module.exports={
     dashboard:async(req,res) =>{
         try {
@@ -18,5 +17,22 @@ module.exports={
         } catch (error) {
             throw error;
         }
-    }
+    },
+    user: async(req, res) => {
+        try {
+          const userData= await findByPk(req.session.user);
+          console.log("usuario:", userData);
+        return await res.render("./user/user.ejs", {
+          index,
+          settingGeneral,
+          minibar,
+          user:req.session.user,
+          admin:req.session.admin,
+          userData
+        });  
+        } catch (error) {
+          throw error;
+        }
+        
+      }
 }

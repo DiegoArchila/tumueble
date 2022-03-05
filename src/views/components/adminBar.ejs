@@ -1,8 +1,14 @@
 
 <!--Remenber validate if the user is Admin or Normal-->
 <nav class="adminBar flx-ctr">
-    <a href="/admin/dashboard" class="adminBar__principalIcon"><i class="iconify" data-icon="carbon:cics-system-group"></i></a>
+    
+    <% if(locals.user) { %> 
+    <a href=<%= (locals.admin!=undefined) ? "/admin/dashboard" : "/user/dashboard"%> class="adminBar__principalIcon"><i class="iconify" data-icon="carbon:dashboard"></i></a>
+    <% } %>
+
+    <% if(locals.admin!=undefined) { %> 
     <a href="/admin/products" class="adminBar__principalIcon"><i class="iconify  adminBar__principalIconProducts" data-icon="akar-icons:shipping-box-02"></i></a>
     <a href="/admin/components" class="adminBar__principalIcon"><i class="iconify" data-icon="bx:bxs-category-alt"></i></a>
-    <a href="/admin/user" class="adminBar__principalIcon"><i class="iconify adminBar__principalIconUser" data-icon="ant-design:user-outlined"></i></a>
+    <% } %> 
+    <a href=<%= (locals.admin!=undefined) ? "/admin/user" : "/user"%> class="adminBar__principalIcon"><i class="iconify adminBar__principalIconUser" data-icon="ant-design:user-outlined"></i></a>
 </nav>

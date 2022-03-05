@@ -12,6 +12,11 @@ const getAlls = () => {
     return getData();
 }
 
+/**
+ * Found user by Primary Key or ID
+ * @param {*} id 
+ * @returns User found
+ */
 const findByPk = (id) =>{
     let allsUsers=getAlls();
     let user=allsUsers.find(u=>u.id===id);

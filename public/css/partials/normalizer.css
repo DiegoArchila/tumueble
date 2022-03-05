@@ -23,6 +23,15 @@ body {
   background-position: inherit;
 }
 
+/*Imagen in building*/
+.imgSiteBuilding{
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px var(--color-bg-miniBanner);
+
+}
+
 .menuBar,
 .miniBanner,
 main,

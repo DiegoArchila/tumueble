@@ -1,0 +1,46 @@
+<!--
+    Objects needs for works
+    orders {
+        "id":0,
+        "date":"dd/mm/YYYY",
+        "userId":0,
+        "totalPriceOrder": 0,
+        "status": "no-setup"
+    }
+-->
+<!DOCTYPE html>
+<html lang="<%- settingGeneral.languaje.Spanish %>">
+    <!--HEAD-->
+    <%- include("../partials/head.ejs") %>
+    <body>
+
+        <!--HEADER-->
+        <%- include('../partials/header.ejs')%>
+
+        
+        <!--Se pasa el objeto a miniBanner-->
+        <!--MiniBanner-->
+        <% minibar = {
+            title:"Admin componentes",
+            icon:"eos-icons:admin-outlined"
+        } %> 
+        <%- include('../partials/miniBanner.ejs')%>
+
+        <!--MAIN-->
+        <main>
+            <!--AdminBar-->
+            <%- include('../components/adminBar.ejs')%>
+            <section class="alerts flx-clm-ctr">
+                <h1 class="alerts__bar">Componentes: En construcción...</h1>
+                <img src="/img/building.gif" alt="" class="imgSiteBuilding">
+
+                     
+            </section>
+        </main>
+        
+    
+        <!--FOOTER-->
+        <%- include('../partials/footer.ejs') %> 
+        
+    </body>
+</html>

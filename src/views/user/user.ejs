@@ -15,8 +15,8 @@
         <!--Se pasa el objeto a miniBanner-->
         <!--MiniBanner-->
         <% minibar = {
-            title:"Admin - Usuario",
-            icon:"eos-icons:admin-outlined"
+            title:"Usuario",
+            icon:"carbon:user-profile"
         } %> 
         <%- include('../partials/miniBanner.ejs')%>
 
@@ -30,7 +30,7 @@
                 <!-- <nav class="user__bar flx-ctr">
                     <h1 class="user__barTitle">Detalles usuario</h1>
                 </nav> -->
-                <form action="/admin/user" method="post" class="user__container">
+                <form action="/user" method="post" class="user__container">
                     
                     <!--names-->
                     <label class="user__inputText" for="firstName">

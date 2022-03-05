@@ -21,7 +21,7 @@
             <% if(locals.user) {%> 
             <!-- Section User -->
             <li>
-                <a href=<%= (locals.admin && admin==true) ? "/admin/dashboard" : "/user/dashboard" %> class="">
+                <a href=<%= (locals.admin && admin) ? "/admin/dashboard" : "/user/dashboard" %> class="">
                     <i class="iconify menuBar__optionUserIcon" data-icon="ant-design:user-outlined"></i>
                 </a>
             </li>
@@ -43,7 +43,7 @@
 
             <!-- Section Login -->
             <li>
-                <a href="/login" class="">
+                <a href=<%= (locals.user) ? "/logout" : "/login" %>  class="">
                     <i class="iconify menuBar__optionUserIcon" data-icon=<%= (locals.user) ?  "ant-design:logout-outlined":
                     "ri:login-circle-line" %>></i>
                 </a>

@@ -1,22 +1,4 @@
-/**Index contain information from title the page.
- * 
- * index {
- *  name: name of the project
- *  title: title of the page
- * }
-*/
-const index=require("../databases/index.json");
-index.title="Cart";
-
-/**settingGeneralSite contain information from the struct of the head.
- * 
- * settingGeneralSite {
- *  languaje: lanjuaje of the site (See the settingGeneralSite.json)
- *  title: title of the page
- * }
-*/
-const settingGeneral=require("../databases/settingGeneralSite.json");
-
+const { toCOP, toObject } =require("../lib/formats.js");
 /**cart.json contain information from the Cart shop.
  * 
  * cart {
@@ -30,24 +12,14 @@ const settingGeneral=require("../databases/settingGeneralSite.json");
  *  discount: discount applied to the product 
  * }
 */
-const cart=require("../databases/business/cart.json");
+const cart=toObject("../databases/business/cart.json");
+const { minibar, index, settingGeneral } =require("../lib/complements.js");
 
-/** Format the price to currency COP
- */
-const {toCOP} =require("../lib/formats.js");
-
-/**contains the sum of the order
+/**
+ * contains the sum of the order
  * 
  */
 const totalOrder=0;
-
-/**MiniBanner
- * For more information see /wiews/partials/miniBanner.ejs
- */
-const minibar={
-    title:"Carrito de compras",
-    icon:"mdi:cash-register"
-};
 
 module.exports= {
     cart: async (req,res)=> {

@@ -1,3 +1,4 @@
+<% if(locals.user!=undefined && locals.userData=!undefined) {%> 
 <section class="user">
     <nav class="user__bar flx-ctr">
         <h1 class="user__barTitle">Detalles usuario</h1>
@@ -9,6 +10,7 @@
             Nombres *
         </label>
         <input type="text" name="firstName" id="firstName" required minlength="2" maxlength="128"
+        value=<%= userData.firstName %> 
         placeholder="Ingrese los nombres...">
 
         <!--last names-->
@@ -16,6 +18,7 @@
             Apellidos *
         </label>
         <input type="text" name="lastName" id="lastName" required minlength="2" maxlength="128"
+        value="<%= userData.lastName %>" 
         placeholder="Ingrese los apellidos...">
 
         <!--Display Elements by row in flex-->
@@ -99,3 +102,4 @@
         </div>    
     </form>
 </section>
+<% } %> 
