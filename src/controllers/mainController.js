@@ -27,8 +27,6 @@ const home = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    console.log("req.session.user :", req.session.user);
-    console.log("req.session.admin :", req.session.admin);
     if (req.session.user != undefined) {
       return await res.render("index.ejs", {
         settingGeneral,
@@ -50,8 +48,9 @@ const login = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
+  let imagen=(req.file) ? req.file.filename : null;
   try {
-    create(req.body);
+    create(req.body,imagen);
     await res.redirect("/login");
   } catch (error) {
     throw error;

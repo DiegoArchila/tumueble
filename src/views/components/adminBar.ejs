@@ -10,5 +10,11 @@
     <a href="/admin/products" class="adminBar__principalIcon"><i class="iconify  adminBar__principalIconProducts" data-icon="akar-icons:shipping-box-02"></i></a>
     <a href="/admin/components" class="adminBar__principalIcon"><i class="iconify" data-icon="bx:bxs-category-alt"></i></a>
     <% } %> 
-    <a href=<%= (locals.admin!=undefined) ? "/admin/user" : "/user"%> class="adminBar__principalIcon"><i class="iconify adminBar__principalIconUser" data-icon="ant-design:user-outlined"></i></a>
+    <a href=<%= (locals.admin!=undefined) ? "/admin/user" : "/user"%> class="adminBar__principalIcon">
+        <% if(locals.userData!=undefined && userData.imagen) {%>
+            <img class="adminBar__principalIconUser" src="/img/profile/<%= userData.imagen %>"  />
+        <% } else {%>  
+        <i class="iconify adminBar__principalIconUser" data-icon="ant-design:user-outlined"></i>
+        <% } %> 
+    </a>
 </nav>

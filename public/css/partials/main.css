@@ -204,12 +204,13 @@ input.cartDetail__itemInput {
 }
 
 /*icons of the AdminBar*/
-.adminBar__principalIcon {
+.adminBar__principalIcon, .adminBar__principalIconUser {
   color: var(--color-font-adminBar);
   font-size: 43px;
   width: 43px;
   height: 43px;
 }
+
 .adminBar__principalIconUser {
   /*background-color: var(--color-font-adminBar);*/
   color: var(--color-font-adminBar);

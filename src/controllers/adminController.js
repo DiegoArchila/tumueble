@@ -6,15 +6,19 @@ const { findByPk } = require("../models/users.js");
 
 module.exports = {
   admin: async(req, res) => {
-     return await res.render("./admin/index.ejs", {
-      index,
-      settingGeneral,
-      toCOP,
-      minibar,
-      orders,
-      user:req.session.user,
-      admin:req.session.admin
-    });
+    try {
+       return await res.render("./admin/index.ejs", {
+        index,
+        settingGeneral,
+        toCOP,
+        minibar,
+        orders,
+        user:req.session.user,
+        admin:req.session.admin
+      });
+    } catch (error) {
+      throw error;
+    }
   },
   products: async(req, res) => {
     return await res.render("./admin/products.ejs", {
@@ -38,9 +42,10 @@ module.exports = {
     });
   },
   user: async(req, res) => {
+    const userData= await findByPk(req.session.user);
+    console.log(userData);
     try {
       const userData= await findByPk(req.session.user);
-      console.log("usuario:", userData);
     return await res.render("./admin/adminUser.ejs", {
       index,
       settingGeneral,

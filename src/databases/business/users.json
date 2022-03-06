@@ -11,35 +11,34 @@
   "address": "admin@tumueble:port",
   "password": "$2b$12$bJLB.I2pJftZPvP/jp87Zuz6IjrJNvREC6Ae/bdY0oli/f7e3J516",
   "passwordTry": "",
-  "isAdmin":true,
+  "isAdmin": true,
   "id": 1
  },
  {
   "firstName": "Diego",
-  "lastName": "Navarro Meza",
-  "dateBorn": "2022-03-09",
+  "lastName": "Archila",
+  "dateBorn": "2022-03-02",
   "gender": "1",
   "email": "daat3523@gmail.com",
   "country": "Colombia",
   "province_state": "Antioquia",
   "city_town": "Rionegro",
   "address": "Calle 52 # 61-337, Falda del Palo",
-  "password": "$2b$12$R8b0KgESzg1u17lN7vzk5.JA40Mz5lh1wZMEHCfgM0WUuime5izAy",
-  "passwordTry": "",
-  "id": 2
+  "password": "$2b$12$a5qujhe0h1hrekcT1sm3ZeOgL0VceewFlQZ.UPtsSX/aeYFrYZYOK",
+  "id": 2,
+  "imagen": "1646604827348.jpg"
  },
  {
   "firstName": "Marelis",
   "lastName": "Navarro Meza",
-  "dateBorn": "2022-03-10",
+  "dateBorn": "2022-03-23",
   "gender": "2",
   "email": "modamarelis@gmail.com",
   "country": "Colombia",
   "province_state": "Antioquia",
   "city_town": "Rionegro",
   "address": "Calle 52 # 61-337, Falda del Palo",
-  "password": "$2b$12$.gVH8.4MXdFiJZWYHkid7.aj4GbTUg12.exfpjP5Gs3C4M80eL.Oe",
-  "passwordTry": "",
+  "password": "$2b$12$jFxdGKV/cxZBBtgFgr5tKOlmywbajBdc00Q.6uR3FIIhB0EipsI/y",
   "id": 3
  }
 ]

@@ -105,15 +105,20 @@ const isAdmin= async(id) => {
  * @param {Object} user Object with structs from user to create 
  * @returns true if of user is created, or a object error in case negative.
  */
-const create = (user)=>{
+const create = (user, imagen)=>{
     try {
 
         let allsUsers=getAlls();
     
         user.id=getNewId();
         user.password=encrypt(user.password);
-        user.passwordTry="";
-
+        user.passwordTry=undefined;
+        
+        user.imagen=undefined;
+        if(imagen!=null){
+            user.imagen=imagen
+        }
+        
         allsUsers.push(user);
 
         createJSON(allsUsers,users);
@@ -167,6 +172,8 @@ const getUserByEmail=async(email)=>{
         throw error;
     }
 }
+
+
 
 module.exports= {
     getAlls,

@@ -115,6 +115,13 @@
                     <input type="text" name="address" id="address" required minlength="2" maxlength="128" readonly
                     value="<%= userData.address %>"
                     placeholder="Ingrese la dirección...">
+
+                    <!--Image-->
+                    <label class="user__inputText" for="image">
+                        Imagen de perfil
+                    </label>
+                    <input type="file" name="image" id="image" class="product__imagesButtonAdd" multiple accept="image/png, .jpg, .jpeg, image/gif"
+                    disabled >
             
                     <!--Password-->
                     <label class="user__inputText" for="password">

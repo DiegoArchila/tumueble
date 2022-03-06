@@ -29,7 +29,7 @@
                 <!-- <nav class="user__bar flx-ctr">
                     <h1 class="user__barTitle">Crear usuario</h1>
                 </nav> -->
-                <form action="/user/create" method="POST" class="user__container">
+                <form action="/user/create" method="POST" class="user__container" enctype="multipart/form-data">
                     
                     <!--names-->
                     <label class="user__inputText" for="firstName">
@@ -110,6 +110,13 @@
                     </label>
                     <textarea rows="3" type="text" name="address" id="address" required minlength="2" maxlength="512"
                     placeholder="Ingrese la dirección..."><%= (locals.old && old.address) ? old.address : "" %></textarea>
+
+                    <!--Image-->
+                    <label class="user__inputText" for="image">
+                        Imagen de perfil
+                    </label>
+                    <input type="file" name="image" id="image" class="product__imagesButtonAdd" accept="image/png, .jpg, .jpeg, image/gif"
+                    >
             
                     <!--Password-->
                     <label class="user__inputText" for="password">

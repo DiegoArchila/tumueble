@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const multer = require("multer");
 
 /**Format the numbers to format currency,
  * this to COP=Colombian PESO Money
@@ -50,10 +51,28 @@ const encrypt = (pwd) => {
     return bcrypt.compareSync(pwd,pwdEncrypted);
 }
 
+/**
+ * Settings of multer
+ */
+const optStorage = multer.diskStorage({
+    destination: function(req, file, cllbk) {
+        cllbk(null, path.resolve(__dirname, "../../public/img/profile"));
+    },
+    filename: function(req, file, cllbk) {
+        cllbk(null, `${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+
+/**
+ * Function to uploadFile
+ */
+const uploadFile=multer({ storage:optStorage });
+
 module.exports={
     toCOP,
     toObject,
     createJSON,
     encrypt,
-    comparePassword
+    comparePassword,
+    uploadFile
 }

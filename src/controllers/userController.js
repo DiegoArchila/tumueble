@@ -5,6 +5,7 @@ const { findByPk } = require("../models/users.js");
 module.exports={
     dashboard:async(req,res) =>{
         try {
+          const userData= await findByPk(req.session.user)
             await res.render("./user/index.ejs", {
                 minibar,
                 settingGeneral,
@@ -12,7 +13,8 @@ module.exports={
                 orders:userOrders,
                 toCOP,
                 user:req.session.user,
-                admin:req.session.admin
+                admin:req.session.admin,
+                userData
             });
         } catch (error) {
             throw error;
@@ -21,7 +23,6 @@ module.exports={
     user: async(req, res) => {
         try {
           const userData= await findByPk(req.session.user);
-          console.log("usuario:", userData);
         return await res.render("./user/user.ejs", {
           index,
           settingGeneral,

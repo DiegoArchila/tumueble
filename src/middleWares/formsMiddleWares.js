@@ -5,6 +5,7 @@ const settingGeneral = require("../databases/settingGeneralSite.json");
 const index = require("../databases/index.json");
 const { minibar } =require("../lib/complements.js");
 const { validationResult } = require("express-validator");
+const { uploadFile } = require("../lib/formats.js");
 
 const validationsCreateUser=[
     check("firstName")
@@ -142,9 +143,11 @@ const validationLoginUser=async(req,res,next)=>{
     }
 }
 
+
 module.exports={
     validationsCreateUser,
     validateErrorscreateUser,
     validationLoginUser,
-    validationLogin
+    validationLogin,
+    uploadFile
 }
